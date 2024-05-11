@@ -80,3 +80,13 @@ DATABASE_URL=mysql://symfony:symfony@mysql:3306/symfony?serverVersion=5.7
 * `docker-compose exec php bash` - enter into PHP container
 * `docker-compose exec mysql bash` - enter into MySQL container
 * `docker-compose exec apache bash` - enter into Apache2 container
+
+## Troubleshooting
+
+* **2024.05.11 - ERROR: for apache  'ContainerConfig'**
+
+  Error `ERROR: for apache  'ContainerConfig'` after `docker-compose up -d` execution can be solved `docker compose up -d --force-recreate`
+
+  
+
+
