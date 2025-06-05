@@ -7,14 +7,15 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/doctrine-migrations-bundle": "^3.4",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
         "symfony/runtime": "6.4.*",
+        "symfony/translation": "6.4.*",
+        "symfony/twig-bundle": "6.4.*",
         "symfony/yaml": "6.4.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {
@@ -53,6 +54,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "init-app" : [
+            "./bin/console --no-interaction doctrine:migrations:migrate",
+            "./bin/console --no-interaction doctrine:fixtures:load"
         ]
     },
     "conflict": {
@@ -63,5 +68,10 @@
             "allow-contrib": false,
             "require": "6.4.*"
         }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^4.1",
+        "fakerphp/faker": "^1.24",
+        "symfony/maker-bundle": "^1.63"
     }
 }
