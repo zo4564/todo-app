@@ -29,7 +29,7 @@ class RecordController extends AbstractController
     )]
     public function index(RecordRepository $repository): Response
     {
-        $records = $repository->findAll();
+//        $records = $repository->findAll();
 
         return $this->render(
             'record/index.html.twig',

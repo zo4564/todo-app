@@ -47,6 +47,9 @@
             "migrations/.gitignore"
         ]
     },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v6.6.1"
+    },
     "symfony/console": {
         "version": "6.4",
         "recipe": {
@@ -138,5 +141,8 @@
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
+    },
+    "twig/extra-bundle": {
+        "version": "v3.21.0"
     }
 }
