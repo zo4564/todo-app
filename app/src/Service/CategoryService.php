@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Task service.
+ * Category service.
  */
 
 namespace App\Service;
 
-use App\Entity\Task;
-use App\Repository\TaskRepository;
+use App\Entity\Category;
+use App\Repository\CategoryRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- * Class TaskService.
+ * Class CategoryService.
  */
-class TaskService implements TaskServiceInterface
+class CategoryService implements CategoryServiceInterface
 {
     /**
      * Items per page.
@@ -30,10 +30,10 @@ class TaskService implements TaskServiceInterface
     /**
      * Constructor.
      *
-     * @param TaskRepository     $taskRepository Task repository
+     * @param CategoryRepository     $CategoryRepository Category repository
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly CategoryRepository $CategoryRepository, private readonly PaginatorInterface $paginator)
     {
     }
 
@@ -47,34 +47,24 @@ class TaskService implements TaskServiceInterface
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->taskRepository->queryAll(),
+            $this->CategoryRepository->queryAll(),
             $page,
             self::PAGINATOR_ITEMS_PER_PAGE,
             [
-                'sortFieldAllowList' => ['task.id', 'task.createdAt', 'task.updatedAt', 'task.title'],
-                'defaultSortFieldName' => 'task.updatedAt',
+                'sortFieldAllowList' => ['Category.id', 'Category.createdAt', 'Category.updatedAt', 'Category.title'],
+                'defaultSortFieldName' => 'Category.updatedAt',
                 'defaultSortDirection' => 'desc',
             ]
         );
     }
-
     /**
      * Save entity.
      *
-     * @param Task $task Task entity
+     * @param Category $category Category entity
      */
-    public function save(Task $task): void
+    public function save(Category $category): void
     {
-        $this->taskRepository->save($task);
-    }
 
-    /**
-     * Delete entity.
-     *
-     * @param Task $task Task entity
-     */
-    public function delete(Task $task): void
-    {
-        $this->taskRepository->delete($task);
+        $this->categoryRepository->save($category);
     }
 }

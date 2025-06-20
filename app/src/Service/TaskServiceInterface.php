@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Task service interface.
  */
@@ -18,8 +19,21 @@ interface TaskServiceInterface
      *
      * @param int $page Page number
      *
-     * @return PaginationInterface<string, mixed> Paginated list
+     * @return PaginationInterface Paginated list
      */
     public function getPaginatedList(int $page): PaginationInterface;
 
+    /**
+     * Save entity.
+     *
+     * @param Task $task Task entity
+     */
+    public function save(Task $task): void;
+
+    /**
+     * Delete entity.
+     *
+     * @param Task $task Task entity
+     */
+    public function delete(Task $task): void;
 }
