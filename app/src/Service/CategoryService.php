@@ -6,8 +6,11 @@
 
 namespace App\Service;
 
-use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use App\Entity\Category;
+use App\Repository\TaskRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -30,10 +33,11 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository     $CategoryRepository Category repository
-     * @param PaginatorInterface $paginator      Paginator
+     * @param CategoryRepository $categoryRepository
+     * @param TaskRepository $taskRepository
+     * @param PaginatorInterface $paginator Paginator
      */
-    public function __construct(private readonly CategoryRepository $CategoryRepository, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly CategoryRepository $categoryRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
     {
     }
 
@@ -47,16 +51,17 @@ class CategoryService implements CategoryServiceInterface
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->CategoryRepository->queryAll(),
+            $this->categoryRepository->queryAll(),
             $page,
             self::PAGINATOR_ITEMS_PER_PAGE,
             [
-                'sortFieldAllowList' => ['Category.id', 'Category.createdAt', 'Category.updatedAt', 'Category.title'],
-                'defaultSortFieldName' => 'Category.updatedAt',
+                'sortFieldAllowList' => ['category.id', 'category.createdAt', 'category.updatedAt', 'category.title', 'category.title'],
+                'defaultSortFieldName' => 'category.updatedAt',
                 'defaultSortDirection' => 'desc',
             ]
         );
     }
+
     /**
      * Save entity.
      *
@@ -64,7 +69,34 @@ class CategoryService implements CategoryServiceInterface
      */
     public function save(Category $category): void
     {
-
         $this->categoryRepository->save($category);
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param Category $category Category entity
+     */
+    public function delete(Category $category): void
+    {
+        $this->categoryRepository->delete($category);
+    }
+
+    /**
+     * Can Category be deleted?
+     *
+     * @param Category $category Category entity
+     *
+     * @return bool Result
+     */
+    public function canBeDeleted(Category $category): bool
+    {
+        try {
+            $result = $this->taskRepository->countByCategory($category);
+
+            return !($result > 0);
+        } catch (NoResultException|NonUniqueResultException) {
+            return false;
+        }
     }
 }

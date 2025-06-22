@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
+
+    <a class="mr-2" href="{{ url('task_create') }}" title="{{ 'label.task_create'|trans }}">
+        {{ 'label.task_create'|trans }}
+    </a>
+
     <h1>{{ 'title.task_list'|trans }}</h1>
     {% if pagination is defined and pagination.items|length %}
 
@@ -27,13 +32,19 @@
             {% for task in pagination.items %}
                 <tr>
                     <td>{{ task.id }}</td>
-                    <td>{{ task.createdAt|format_date('long') }}</td>
-                    <td>{{ task.updatedAt|format_date('long') }}</td>
+                    <td>{{ task.createdAt|format_datetime('long') }}</td>
+                    <td>{{ task.updatedAt|format_datetime('long') }}</td>
                     <td>{{ task.title }}</td>
                     <td>{{ task.category.title }}</td>
                     <td>
-                        <a href="{{ url('task_view', {id: task.id}) }}" title="{{ 'action.view'|trans }}">
+                        <a class="mx-2" href="{{ url('task_view', {id: task.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
+                        </a>
+                        <a class="mx-2" href="{{ url('task_edit', {id: task.id}) }}" title="{{ 'action.edit'|trans }}">
+                            {{ 'action.edit'|trans }}
+                        </a>
+                        <a class="mx-2" href="{{ url('task_delete', {id: task.id}) }}" title="{{ 'action.delete'|trans }}">
+                            {{ 'action.delete'|trans }}
                         </a>
                     </td>
                 </tr>
