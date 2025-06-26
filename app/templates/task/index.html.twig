@@ -32,8 +32,8 @@
             {% for task in pagination.items %}
                 <tr>
                     <td>{{ task.id }}</td>
-                    <td>{{ task.createdAt|format_datetime('long') }}</td>
-                    <td>{{ task.updatedAt|format_datetime('long') }}</td>
+                    <td>{{ task.createdAt|format_date('long') }}</td>
+                    <td>{{ task.updatedAt|format_date('long') }}</td>
                     <td>{{ task.title }}</td>
                     <td>{{ task.category.title }}</td>
                     <td>

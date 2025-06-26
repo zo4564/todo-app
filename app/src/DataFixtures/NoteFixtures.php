@@ -2,14 +2,14 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Tag;
+use App\Entity\Note;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Generator;
 
 /**
- * Class TagFixtures.
+ * Class NoteFixtures.
  */
-class TagFixtures extends AbstractBaseFixtures
+class NoteFixtures extends AbstractBaseFixtures
 {
     /**
      * Load data.
@@ -24,11 +24,11 @@ class TagFixtures extends AbstractBaseFixtures
             return;
         }
 
-        $this->createMany(20, 'tag', function (int $i) {
-            $tag = new Tag();
-            $tag->setTitle($this->faker->unique()->word());
+        $this->createMany(20, 'note', function (int $i) {
+            $note = new Note();
+            $note->setTitle($this->faker->unique()->sentence());
 
-            return $tag;
+            return $note;
         });
     }
 }

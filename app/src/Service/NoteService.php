@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Tag service.
+ * Note service.
  */
 
 namespace App\Service;
 
-use App\Repository\TagRepository;
-use App\Entity\Tag;
+use App\Repository\NoteRepository;
+use App\Entity\Note;
 use App\Repository\TaskRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -15,20 +15,20 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- * Class TagService.
+ * Class NoteService.
  */
-class TagService implements TagServiceInterface
+class NoteService implements NoteServiceInterface
 {
     /**
      * Find by title.
      *
-     * @param string $title Tag title
+     * @param string $title Note title
      *
-     * @return Tag|null Tag entity
+     * @return Note|null Note entity
      */
-    public function findOneByTitle(string $title): ?Tag
+    public function findOneByTitle(string $title): ?Note
     {
-        return $this->tagRepository->findOneByTitle($title);
+        return $this->noteRepository->findOneByTitle($title);
     }
     /**
      * Items per page.
@@ -44,11 +44,11 @@ class TagService implements TagServiceInterface
     /**
      * Constructor.
      *
-     * @param TagRepository $tagRepository
+     * @param NoteRepository $noteRepository
      * @param TaskRepository $taskRepository
      * @param PaginatorInterface $paginator Paginator
      */
-    public function __construct(private readonly TagRepository $tagRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
+    public function __construct(private readonly NoteRepository $noteRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
     {
     }
 
@@ -62,12 +62,12 @@ class TagService implements TagServiceInterface
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->tagRepository->queryAll(),
+            $this->noteRepository->queryAll(),
             $page,
             self::PAGINATOR_ITEMS_PER_PAGE,
             [
-                'sortFieldAllowList' => ['tag.id', 'tag.createdAt', 'tag.updatedAt', 'tag.title', 'tag.title'],
-                'defaultSortFieldName' => 'tag.updatedAt',
+                'sortFieldAllowList' => ['note.id', 'note.createdAt', 'note.updatedAt', 'note.title', 'note.title'],
+                'defaultSortFieldName' => 'note.updatedAt',
                 'defaultSortDirection' => 'desc',
             ]
         );
@@ -76,21 +76,21 @@ class TagService implements TagServiceInterface
     /**
      * Save entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function save(Tag $tag): void
+    public function save(Note $note): void
     {
-        $this->tagRepository->save($tag);
+        $this->noteRepository->save($note);
     }
 
     /**
      * Delete entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function delete(Tag $tag): void
+    public function delete(Note $note): void
     {
-        $this->tagRepository->delete($tag);
+        $this->noteRepository->delete($note);
     }
 
 

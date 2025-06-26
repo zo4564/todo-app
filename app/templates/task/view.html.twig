@@ -19,6 +19,21 @@
             <dt>{{ 'label.category'|trans }}</dt>
             <dd>{{  task.category.title }}</dd>
         </dl>
+        {# SEKCA: NOTATKI #}
+        <h2>{{ 'title.notes'|trans }}</h2>
+
+        {% if task.notes|length > 0 %}
+            <ul>
+                {% for note in task.notes %}
+                    <li>
+                        <strong>{{ note.title }}</strong>
+                        <small class="text-muted">({{ note.createdAt|format_date('medium') }})</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ 'message.no_notes'|trans }}</p>
+        {% endif %}
         <p>
             <a href="{{ url('task_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}

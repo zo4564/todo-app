@@ -7,7 +7,7 @@ namespace App\Form\Type;
 
 use App\Entity\Category;
 use App\Entity\Task;
-use App\Form\DataTransformer\TagsDataTransformer;
+use App\Form\DataTransformer\NotesDataTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -22,9 +22,9 @@ class TaskType extends AbstractType
     /**
      * Constructor.
      *
-     * @param TagsDataTransformer $tagsDataTransformer Tags data transformer
+     * @param NotesDataTransformer $notesDataTransformer Notes data transformer
      */
-    public function __construct(private readonly TagsDataTransformer $tagsDataTransformer)
+    public function __construct(private readonly NotesDataTransformer $notesDataTransformer)
     {
     }
 
@@ -63,17 +63,17 @@ class TaskType extends AbstractType
             ]
         );
         $builder->add(
-            'tags',
+            'notes',
             TextType::class,
             [
-                'label' => 'label.tags',
+                'label' => 'label.notes',
                 'required' => false,
                 'attr' => ['max_length' => 128],
             ]
         );
 
-        $builder->get('tags')->addModelTransformer(
-            $this->tagsDataTransformer
+        $builder->get('notes')->addModelTransformer(
+            $this->notesDataTransformer
         );
     }
 

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\TagRepository;
+use App\Repository\NoteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: TagRepository::class)]
-class Tag
+#[ORM\Entity(repositoryClass: NoteRepository::class)]
+class Note
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -31,7 +31,7 @@ class Tag
     #[Assert\Length(min: 3, max: 64)]
     #[Gedmo\Slug(fields: ['title'])]
     private ?string $slug = null;
-    #[ORM\Column(length: 64)]
+    #[ORM\Column(length: 255)]
     private ?string $title = null;
 
     public function getId(): ?int

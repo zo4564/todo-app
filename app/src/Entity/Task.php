@@ -73,21 +73,21 @@ class Task
     private ?Category $category = null;
 
     /**
-     * Tags.
+     * Notes.
      *
-     * @var Collection<int, Tag>
+     * @var Collection<int, Note>
      */
-    #[ORM\ManyToMany(targetEntity: Tag::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
-    #[ORM\JoinTable(name: 'tasks_tags')]
+    #[ORM\ManyToMany(targetEntity: Note::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
+    #[ORM\JoinTable(name: 'tasks_notes')]
     #[Assert\Valid]
-    private Collection $tags;
+    private Collection $notes;
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        $this->tags = new ArrayCollection();
+        $this->notes = new ArrayCollection();
     }
 
     /**
@@ -201,34 +201,34 @@ class Task
     }
 
     /**
-     * Getter for tags.
+     * Getter for notes.
      *
-     * @return Collection<int, Tag> Tags collection
+     * @return Collection<int, Note> Notes collection
      */
-    public function getTags(): Collection
+    public function getNotes(): Collection
     {
-        return $this->tags;
+        return $this->notes;
     }
 
     /**
-     * Add tag.
+     * Add note.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function addTag(Tag $tag): void
+    public function addNote(Note $note): void
     {
-        if (!$this->tags->contains($tag)) {
-            $this->tags->add($tag);
+        if (!$this->notes->contains($note)) {
+            $this->notes->add($note);
         }
     }
 
     /**
-     * Remove Tag.
+     * Remove Note.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function removeTag(Tag $tag): void
+    public function removeNote(Note $note): void
     {
-        $this->tags->removeElement($tag);
+        $this->notes->removeElement($note);
     }
 }

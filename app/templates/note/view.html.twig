@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}
+    {{ 'title.note_details'|trans({'%id%': note.id|default('')}) }}
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'title.tag_details'|trans({'%id%': tag.id|default('')}) }}</h1>
-    {% if tag is defined and tag|length %}
+    <h1>{{ 'title.note_details'|trans({'%id%': note.id|default('')}) }}</h1>
+    {% if note is defined and note|length %}
         <dl class="dl-horizontal">
             <dt>{{ 'label.id'|trans }}</dt>
-            <dd>{{ tag.id }}</dd>
+            <dd>{{ note.id }}</dd>
             <dt>{{ 'label.created_at'|trans }}</dt>
-            <dd>{{ tag.createdAt|format_date('long') }}</dd>
+            <dd>{{ note.createdAt|format_date('long') }}</dd>
             <dt>{{ 'label.updated_at'|trans }}</dt>
-            <dd>{{ tag.updatedAt|format_date('long') }}</dd>
+            <dd>{{ note.updatedAt|format_date('long') }}</dd>
             <dt>{{ 'label.title'|trans }}</dt>
-            <dd>{{  tag.title }}</dd>
+            <dd>{{  note.title }}</dd>
         </dl>
         <p>
-            <a href="{{ url('tag_index') }}" title="{{ 'action.back_to_list'|trans }}">
+            <a href="{{ url('note_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
             </a>
         </p>

@@ -1,26 +1,26 @@
 <?php
 /**
- * Tag service interface.
+ * Note service interface.
  */
 
 namespace App\Service;
 
-use App\Entity\Tag;
+use App\Entity\Note;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- * Interface TagServiceInterface.
+ * Interface NoteServiceInterface.
  */
-interface TagServiceInterface
+interface NoteServiceInterface
 {
     /**
      * Find by title.
      *
-     * @param string $title Tag title
+     * @param string $title Note title
      *
-     * @return Tag|null Tag entity
+     * @return Note|null Note entity
      */
-    public function findOneByTitle(string $title): ?Tag;
+    public function findOneByTitle(string $title): ?Note;
     /**
      * Get paginated list.
      *
@@ -32,8 +32,8 @@ interface TagServiceInterface
     /**
      * Save entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function save(Tag $tag): void;
+    public function save(Note $note): void;
 
 }

@@ -2,24 +2,24 @@
 
 namespace App\Repository;
 
-use App\Entity\Tag;
+use App\Entity\Note;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 // ...
 /**
- * Class TagRepository.
+ * Class NoteRepository.
  *
- * @extends ServiceEntityRepository<Tag>
+ * @extends ServiceEntityRepository<Note>
  *
  * @method findOneByTitle(string $title)
  */
-class TagRepository extends ServiceEntityRepository
+class NoteRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tag::class);
+        parent::__construct($registry, Note::class);
     }
 
     /**
@@ -29,31 +29,31 @@ class TagRepository extends ServiceEntityRepository
      */
     public function queryAll(): QueryBuilder
     {
-        return $this->createQueryBuilder('tag');
+        return $this->createQueryBuilder('note');
     }
     /**
      * Save entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function save(Tag $tag): void
+    public function save(Note $note): void
     {
-        $this->getEntityManager()->persist($tag);
+        $this->getEntityManager()->persist($note);
         $this->getEntityManager()->flush();
     }
     /**
      * Delete entity.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      */
-    public function delete(Tag $tag): void
+    public function delete(Note $note): void
     {
-        var_dump($tag);
-        $this->getEntityManager()->remove($tag);
+        var_dump($note);
+        $this->getEntityManager()->remove($note);
         $this->getEntityManager()->flush();
     }
     //    /**
-    //     * @return Tag[] Returns an array of Tag objects
+    //     * @return Note[] Returns an array of Note objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -67,7 +67,7 @@ class TagRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Tag
+    //    public function findOneBySomeField($value): ?Note
     //    {
     //        return $this->createQueryBuilder('t')
     //            ->andWhere('t.exampleField = :val')

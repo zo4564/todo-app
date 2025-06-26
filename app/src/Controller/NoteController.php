@@ -1,33 +1,33 @@
 <?php
 
 /**
- * Tag controller.
+ * Note controller.
  */
 
 namespace App\Controller;
 
-use App\Entity\Tag;
-use App\Service\TagService;
+use App\Entity\Note;
+use App\Service\NoteService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Form\Type\TagType;
+use App\Form\Type\NoteType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
 /**
- * Class TagController.
+ * Class NoteController.
  */
-#[Route('/tag')]
-class TagController extends AbstractController
+#[Route('/note')]
+class NoteController extends AbstractController
 {
     /**
      * Constructor.
      *
-     * @param TagService $tagService Tag service
+     * @param NoteService $noteService Note service
      */
-    public function __construct(private readonly TagService $tagService, private readonly TranslatorInterface $translator)
+    public function __construct(private readonly NoteService $noteService, private readonly TranslatorInterface $translator)
     {
     }
 
@@ -39,34 +39,34 @@ class TagController extends AbstractController
      * @return Response HTTP response
      */
     #[Route(
-        name: 'tag_index',
+        name: 'note_index',
         methods: 'GET'
     )]
     public function index(#[MapQueryParameter] int $page = 1): Response
     {
-        $pagination = $this->tagService->getPaginatedList($page);
+        $pagination = $this->noteService->getPaginatedList($page);
 
-        return $this->render('tag/index.html.twig', ['pagination' => $pagination]);
+        return $this->render('note/index.html.twig', ['pagination' => $pagination]);
     }
 
     /**
      * View action.
      *
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}',
-        name: 'tag_view',
+        name: 'note_view',
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
-    public function view(Tag $tag): Response
+    public function view(Note $note): Response
     {
         return $this->render(
-            'tag/view.html.twig',
-            ['tag' => $tag]
+            'note/view.html.twig',
+            ['note' => $note]
         );
     }
 
@@ -79,28 +79,28 @@ class TagController extends AbstractController
      */
     #[Route(
         '/create',
-        name: 'tag_create',
+        name: 'note_create',
         methods: 'GET|POST'
     )]
     public function create(Request $request): Response
     {
-        $tag = new Tag();
-        $form = $this->createForm(TagType::class, $tag);
+        $note = new Note();
+        $form = $this->createForm(NoteType::class, $note);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->tagService->save($tag);
+            $this->noteService->save($note);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('tag_index');
+            return $this->redirectToRoute('note_index');
         }
 
         return $this->render(
-            'tag/create.html.twig',
+            'note/create.html.twig',
             ['form' => $form->createView()]
         );
     }
@@ -109,44 +109,44 @@ class TagController extends AbstractController
      * Edit action.
      *
      * @param Request  $request  HTTP request
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}/edit',
-        name: 'tag_edit',
+        name: 'note_edit',
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET|PUT'
     )]
-    public function edit(Request $request, Tag $tag): Response
+    public function edit(Request $request, Note $note): Response
     {
         $form = $this->createForm(
-            TagType::class,
-            $tag,
+            NoteType::class,
+            $note,
             [
                 'method' => 'PUT',
-                'action' => $this->generateUrl('tag_edit', ['id' => $tag->getId()]),
+                'action' => $this->generateUrl('note_edit', ['id' => $note->getId()]),
             ]
         );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->tagService->save($tag);
+            $this->noteService->save($note);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.edited_successfully')
             );
 
-            return $this->redirectToRoute('tag_index');
+            return $this->redirectToRoute('note_index');
         }
 
         return $this->render(
-            'tag/edit.html.twig',
+            'note/edit.html.twig',
             [
                 'form' => $form->createView(),
-                'tag' => $tag,
+                'note' => $note,
             ]
         );
     }
@@ -155,50 +155,43 @@ class TagController extends AbstractController
      * Delete action.
      *
      * @param Request  $request  HTTP request
-     * @param Tag $tag Tag entity
+     * @param Note $note Note entity
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}/delete',
-        name: 'tag_delete',
+        name: 'note_delete',
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET|DELETE'
     )]
-    public function delete(Request $request, Tag $tag): Response
+    public function delete(Request $request, Note $note): Response
     {
-        if (!$this->tagService->canBeDeleted($tag)) {
-            $this->addFlash(
-                'warning',
-                $this->translator->trans('message.tag_contains_tasks')
-            );
 
-            return $this->redirectToRoute('tag_index');
-        }
 
-        $form = $this->createForm(FormType::class, $tag, [
+        $form = $this->createForm(FormType::class, $note, [
             'method' => 'DELETE',
-            'action' => $this->generateUrl('tag_delete', ['id' => $tag->getId()]),
+            'action' => $this->generateUrl('note_delete', ['id' => $note->getId()]),
         ]);
         $form->handleRequest($request);
 
 //        if ($form->isSubmitted() && $form->isValid()) {
         if (true) {
-            $this->tagService->delete($tag);
+            $this->noteService->delete($note);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('tag_index');
+            return $this->redirectToRoute('note_index');
         }
 
         return $this->render(
-            'tag/delete.html.twig',
+            'note/delete.html.twig',
             [
                 'form' => $form->createView(),
-                'tag' => $tag,
+                'note' => $note,
             ]
         );
     }
