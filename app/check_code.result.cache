@@ -1,131 +1,39 @@
 
-Fixed 0 of 31 files in 0.491 seconds, 18.00 MB memory used
-
-Fixed 0 of 12 files in 0.167 seconds, 18.00 MB memory used
+Fatal error: Uncaught Error: Call to undefined method PhpCsFixer\Config::create() in /home/wwwroot/app/.php-cs-fixer.php:6
+Stack trace:
+#0 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(944): include()
+#1 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(239): PhpCsFixer\Console\ConfigurationResolver::separatedContextLessInclude()
+#2 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(580): PhpCsFixer\Console\ConfigurationResolver->getConfig()
+#3 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(421): PhpCsFixer\Console\ConfigurationResolver->resolveFormat()
+#4 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Command/FixCommand.php(258): PhpCsFixer\Console\ConfigurationResolver->getReporter()
+#5 /home/wwwroot/app/vendor/symfony/console/Command/Command.php(326): PhpCsFixer\Console\Command\FixCommand->execute()
+#6 /home/wwwroot/app/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
+#7 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Application.php(179): Symfony\Component\Console\Application->doRunCommand()
+#8 /home/wwwroot/app/vendor/symfony/console/Application.php(324): PhpCsFixer\Console\Application->doRunCommand()
+#9 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Application.php(101): Symfony\Component\Console\Application->doRun()
+#10 /home/wwwroot/app/vendor/symfony/console/Application.php(175): PhpCsFixer\Console\Application->doRun()
+#11 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/php-cs-fixer(108): Symfony\Component\Console\Application->run()
+#12 /home/wwwroot/app/vendor/bin/php-cs-fixer(119): include('...')
+#13 {main}
+  thrown in /home/wwwroot/app/.php-cs-fixer.php on line 6
 WARNING: The Symfony standard uses 1 deprecated sniff
 -------------------------------------------------------------------------------
 -  Generic.Functions.CallTimePassByReference
    This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
 
 Deprecated sniffs are still run, but will stop working at some point in the future.
-
-
-FILE: /home/wwwroot/app/src/Repository/NoteRepository.php
-------------------------------------------------------------------------
-FOUND 1 ERROR AND 1 WARNING AFFECTING 2 LINES
-------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 20 | ERROR   | Missing doc comment for function __construct()
-------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Repository/UserRepository.php
-------------------------------------------------------------------------
-FOUND 3 ERRORS AND 1 WARNING AFFECTING 3 LINES
-------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 17 | ERROR   | Missing doc comment for function __construct()
- 22 | ERROR   | Doc comment for parameter "$user" missing
- 22 | ERROR   | Doc comment for parameter "$newHashedPassword" missing
-------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Entity/Note.php
-------------------------------------------------------------------------
-FOUND 10 ERRORS AND 1 WARNING AFFECTING 11 LINES
-------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 12 | ERROR   | Missing doc comment for class Note
- 37 | ERROR   | Missing doc comment for function getId()
- 42 | ERROR   | Missing doc comment for function getCreatedAt()
- 47 | ERROR   | Missing doc comment for function setCreatedAt()
- 54 | ERROR   | Missing doc comment for function getUpdatedAt()
- 59 | ERROR   | Missing doc comment for function setUpdatedAt()
- 66 | ERROR   | Missing doc comment for function getSlug()
- 71 | ERROR   | Missing doc comment for function setSlug()
- 78 | ERROR   | Missing doc comment for function getTitle()
- 83 | ERROR   | Missing doc comment for function setTitle()
-------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Entity/Category.php
-------------------------------------------------------------------------
-FOUND 10 ERRORS AND 1 WARNING AFFECTING 11 LINES
-------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 13 | ERROR   | Missing doc comment for class Category
- 42 | ERROR   | Missing doc comment for function getId()
- 47 | ERROR   | Missing doc comment for function getTitle()
- 52 | ERROR   | Missing doc comment for function setTitle()
- 59 | ERROR   | Missing doc comment for function getCreatedAt()
- 64 | ERROR   | Missing doc comment for function setCreatedAt()
- 71 | ERROR   | Missing doc comment for function getUpdatedAt()
- 76 | ERROR   | Missing doc comment for function setUpdatedAt()
- 83 | ERROR   | Missing doc comment for function getSlug()
- 88 | ERROR   | Missing doc comment for function setSlug()
-------------------------------------------------------------------------
 
 
 FILE: /home/wwwroot/app/src/Service/CategoryService.php
------------------------------------------------------------------------------------------------------------
-FOUND 3 ERRORS AFFECTING 2 LINES
------------------------------------------------------------------------------------------------------------
- 33 | ERROR | Doc comment for parameter "$categoryRepository" missing
- 33 | ERROR | Doc comment for parameter "$taskRepository" missing
- 36 | ERROR | Doc comment for parameter $paginator does not match actual variable name $categoryRepository
------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Service/NoteService.php
--------------------------------------------------------------------------------------------------------
-FOUND 3 ERRORS AFFECTING 2 LINES
--------------------------------------------------------------------------------------------------------
- 42 | ERROR | Doc comment for parameter "$noteRepository" missing
- 42 | ERROR | Doc comment for parameter "$taskRepository" missing
- 45 | ERROR | Doc comment for parameter $paginator does not match actual variable name $noteRepository
--------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Controller/NoteController.php
 ----------------------------------------------------------------------
 FOUND 1 ERROR AFFECTING 1 LINE
 ----------------------------------------------------------------------
- 26 | ERROR | Doc comment for parameter "$translator" missing
+ 37 | ERROR | [x] Expected 5 spaces after parameter type; 1 found
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
-
-FILE: /home/wwwroot/app/src/Controller/CategoryController.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 26 | ERROR | Doc comment for parameter "$translator" missing
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/AppFixtures.php
-------------------------------------------------------------------------
-FOUND 2 ERRORS AND 1 WARNING AFFECTING 3 LINES
-------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
-  8 | ERROR   | Missing doc comment for class AppFixtures
- 10 | ERROR   | Missing doc comment for function load()
-------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/NoteFixtures.php
------------------------------------------------------------------------
-FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
------------------------------------------------------------------------
- 3 | WARNING | The license block has to be present at the top
-   |         |                 of every PHP file, before the namespace
------------------------------------------------------------------------
-
-Time: 876ms; Memory: 10MB
+Time: 988ms; Memory: 10MB
 
 WARNING: The Symfony standard uses 1 deprecated sniff
 -------------------------------------------------------------------------------
@@ -135,152 +43,16 @@ WARNING: The Symfony standard uses 1 deprecated sniff
 Deprecated sniffs are still run, but will stop working at some point in the future.
 
 
-FILE: /home/wwwroot/app/tests/Entity/NoteTest.php
--------------------------------------------------------------------------
-FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
--------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
-  8 | ERROR   | Missing doc comment for class NoteTest
- 10 | ERROR   | Missing doc comment for function testGettersAndSetters()
- 29 | ERROR   | Missing doc comment for function testDefaultIdIsNull()
--------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Entity/TaskTest.php
--------------------------------------------------------------------------
-FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
--------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 10 | ERROR   | Missing doc comment for class TaskTest
- 12 | ERROR   | Missing doc comment for function testGettersAndSetters()
- 38 | ERROR   | Missing doc comment for function testNotesCollection()
--------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Entity/UserTest.php
------------------------------------------------------------------------------------
-FOUND 6 ERRORS AND 1 WARNING AFFECTING 7 LINES
------------------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
-  9 | ERROR   | Missing doc comment for class UserTest
- 11 | ERROR   | Missing doc comment for function testDefaultValues()
- 22 | ERROR   | Missing doc comment for function testEmail()
- 32 | ERROR   | Missing doc comment for function testPassword()
- 41 | ERROR   | Missing doc comment for function testRoles()
- 54 | ERROR   | Missing doc comment for function testEraseCredentialsDoesNothing()
------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Entity/CategoryTest.php
--------------------------------------------------------------------------
-FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
--------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
-  8 | ERROR   | Missing doc comment for class CategoryTest
- 10 | ERROR   | Missing doc comment for function testGettersAndSetters()
- 29 | ERROR   | Missing doc comment for function testDefaultIdIsNull()
--------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Service/TaskServiceTest.php
-------------------------------------------------------------------------------------------
-FOUND 7 ERRORS AND 1 WARNING AFFECTING 7 LINES
-------------------------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 13 | ERROR   | Missing doc comment for class TaskServiceTest
- 18 | ERROR   | Missing doc comment for function setUp()
- 26 | ERROR   | Missing doc comment for function createCategory()
- 36 | ERROR   | Declare public methods first,then protected ones and finally private ones
- 36 | ERROR   | Missing doc comment for function testSave()
- 60 | ERROR   | Missing doc comment for function testDelete()
- 86 | ERROR   | Missing doc comment for function testGetPaginatedList()
-------------------------------------------------------------------------------------------
-
-
 FILE: /home/wwwroot/app/tests/Service/NoteServiceTest.php
--------------------------------------------------------------------------------------------
-FOUND 8 ERRORS AND 1 WARNING AFFECTING 8 LINES
--------------------------------------------------------------------------------------------
-   3 | WARNING | The license block has to be present at the top
-     |         |                 of every PHP file, before the namespace
-  14 | ERROR   | Missing doc comment for class NoteServiceTest
-  19 | ERROR   | Missing doc comment for function setUp()
-  27 | ERROR   | Missing doc comment for function createTask()
-  43 | ERROR   | Declare public methods first,then protected ones and finally private ones
-  43 | ERROR   | Missing doc comment for function testSave()
-  65 | ERROR   | Missing doc comment for function testDelete()
-  90 | ERROR   | Missing doc comment for function testGetPaginatedList()
- 110 | ERROR   | Missing doc comment for function testFindOneByTitle()
--------------------------------------------------------------------------------------------
+----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 137 | WARNING | [x] Please trim any trailing whitespace
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
 
-
-FILE: /home/wwwroot/app/tests/Controller/TaskControllerTest.php
-------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AND 1 WARNING AFFECTING 5 LINES
-------------------------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 11 | ERROR   | Missing doc comment for class TaskControllerTest
- 13 | ERROR   | Missing doc comment for function createUser()
- 31 | ERROR   | Missing doc comment for function setUp()
- 39 | ERROR   | Declare public methods first,then protected ones and finally private ones
- 39 | ERROR   | Missing doc comment for function testCreate()
-------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Controller/NoteControllerTest.php
--------------------------------------------------------------------------------------------------------------------------
-FOUND 9 ERRORS AND 1 WARNING AFFECTING 9 LINES
--------------------------------------------------------------------------------------------------------------------------
-  3 | WARNING | [ ] The license block has to be present at the top
-    |         |                     of every PHP file, before the namespace
- 11 | ERROR   | [ ] Missing doc comment for class NoteControllerTest
- 15 | ERROR   | [ ] Missing doc comment for function createUser()
- 33 | ERROR   | [ ] Missing doc comment for function setUp()
- 41 | ERROR   | [ ] Declare public methods first,then protected ones and finally private ones
- 41 | ERROR   | [ ] Missing doc comment for function testIndexPage()
- 51 | ERROR   | [x] Function closing brace must go on the next line following the body; found 1 blank lines before brace
- 53 | ERROR   | [ ] Missing doc comment for function testCreatePageGet()
- 63 | ERROR   | [ ] Missing doc comment for function testCreateNote()
- 79 | ERROR   | [x] Function closing brace must go on the next line following the body; found 1 blank lines before brace
--------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
--------------------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Controller/CategoryControllerTest.php
-------------------------------------------------------------------------------------------
-FOUND 6 ERRORS AND 1 WARNING AFFECTING 6 LINES
-------------------------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
- 19 | ERROR   | Missing doc comment for function createUser()
- 37 | ERROR   | Missing doc comment for function setUp()
- 45 | ERROR   | Declare public methods first,then protected ones and finally private ones
- 45 | ERROR   | Missing doc comment for function testIndexPage()
- 53 | ERROR   | Missing doc comment for function testCreatePageGet()
- 61 | ERROR   | Missing doc comment for function testCreateCategory()
-------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/tests/Controller/SecurityControllerTest.php
--------------------------------------------------------------------------------------------
-FOUND 4 ERRORS AND 1 WARNING AFFECTING 5 LINES
--------------------------------------------------------------------------------------------
-  3 | WARNING | The license block has to be present at the top
-    |         |                 of every PHP file, before the namespace
-  7 | ERROR   | Missing doc comment for class SecurityControllerTest
-  9 | ERROR   | Missing doc comment for function testLoginPageLoadsSuccessfully()
- 19 | ERROR   | Missing doc comment for function testLoginWithWrongCredentialsShowsError()
- 37 | ERROR   | Missing doc comment for function testLogoutActionThrowsLogicException()
--------------------------------------------------------------------------------------------
-
-Time: 378ms; Memory: 8MB
+Time: 411ms; Memory: 8MB
 
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
@@ -336,7 +108,7 @@ Time: 378ms; Memory: 8MB
  ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
 
 [notice] Migrating up to DoctrineMigrations\Version20250626162417
-[notice] finished in 693.3ms, used 14M memory, 8 migrations executed, 23 sql queries
+[notice] finished in 719.8ms, used 14M memory, 8 migrations executed, 23 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250626162417                                        
 

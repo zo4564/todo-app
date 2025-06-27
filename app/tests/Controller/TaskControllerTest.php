@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Controller;
 
 use App\Entity\Enum\UserRole;
@@ -13,43 +13,6 @@ use App\Entity\Category;
  */
 class TaskControllerTest extends WebTestCase
 {
-    /**
-     * Create user.
-     *
-     * @param array $roles
-     * @return User
-     */
-    private function createUser(array $roles): User
-    {
-        $passwordHasher = static::getContainer()->get('security.password_hasher');
-        $user = new User();
-        $user->setEmail('user@example.com');
-        $user->setRoles($roles);
-        $user->setPassword(
-            $passwordHasher->hashPassword(
-                $user,
-                'p@55w0rd'
-            )
-        );
-        $userRepository = static::getContainer()->get(UserRepository::class);
-        $userRepository->save($user);
-
-        return $user;
-    }
-
-    /**
-     * Set up.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        $this->client = static::createClient();
-
-        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
-        $this->client->loginUser($adminUser);
-    }
-
     /**
      * Test create
      *
@@ -82,5 +45,43 @@ class TaskControllerTest extends WebTestCase
         $this->client->followRedirect();
 
         $this->assertSelectorTextContains('.alert-success', 'Record created successfully.');
+    }
+
+    /**
+     * Set up.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        $this->client = static::createClient();
+
+        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
+        $this->client->loginUser($adminUser);
+    }
+
+    /**
+     * Create user.
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    private function createUser(array $roles): User
+    {
+        $passwordHasher = static::getContainer()->get('security.password_hasher');
+        $user = new User();
+        $user->setEmail('user@example.com');
+        $user->setRoles($roles);
+        $user->setPassword(
+            $passwordHasher->hashPassword(
+                $user,
+                'p@55w0rd'
+            )
+        );
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $userRepository->save($user);
+
+        return $user;
     }
 }

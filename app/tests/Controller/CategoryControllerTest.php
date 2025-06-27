@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Controller;
 
 use App\Entity\Enum\UserRole;
@@ -15,43 +15,6 @@ class CategoryControllerTest extends WebTestCase
 {
     private \Symfony\Bundle\FrameworkBundle\KernelBrowser $client;
     private EntityManagerInterface $entityManager;
-
-    /**
-     * Test create user.
-     *
-     * @param array $roles
-     * @return User
-     */
-    private function createUser(array $roles): User
-    {
-        $passwordHasher = static::getContainer()->get('security.password_hasher');
-        $user = new User();
-        $user->setEmail('user@example.com');
-        $user->setRoles($roles);
-        $user->setPassword(
-            $passwordHasher->hashPassword(
-                $user,
-                'p@55w0rd'
-            )
-        );
-        $userRepository = static::getContainer()->get(UserRepository::class);
-        $userRepository->save($user);
-
-        return $user;
-    }
-
-    /**
-     * Test set up.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        $this->client = static::createClient();
-        $this->entityManager = self::getContainer()->get('doctrine')->getManager();
-        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
-        $this->client->loginUser($adminUser);
-    }
 
     /**
      * Test index page.
@@ -99,5 +62,43 @@ class CategoryControllerTest extends WebTestCase
 
         $this->assertSelectorExists('.alert-success');
         $this->assertSelectorTextContains('.alert-success', 'Record created successfully.');
+    }
+
+    /**
+     * Test set up.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        $this->client = static::createClient();
+        $this->entityManager = self::getContainer()->get('doctrine')->getManager();
+        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
+        $this->client->loginUser($adminUser);
+    }
+
+    /**
+     * Test create user.
+     *
+     * @param array $roles
+     *
+     * @return User
+     */
+    private function createUser(array $roles): User
+    {
+        $passwordHasher = static::getContainer()->get('security.password_hasher');
+        $user = new User();
+        $user->setEmail('user@example.com');
+        $user->setRoles($roles);
+        $user->setPassword(
+            $passwordHasher->hashPassword(
+                $user,
+                'p@55w0rd'
+            )
+        );
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $userRepository->save($user);
+
+        return $user;
     }
 }

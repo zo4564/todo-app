@@ -1,11 +1,14 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Entity;
 
 use App\Entity\User;
 use App\Entity\Enum\UserRole;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * User test class.
+ */
 class UserTest extends TestCase
 {
     /**

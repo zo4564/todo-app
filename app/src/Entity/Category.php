@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
@@ -8,7 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
+/**
+ * Category class.
+ */
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ORM\Table(name: 'categories')]
 class Category
@@ -88,6 +90,7 @@ class Category
      * Set title.
      *
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle(string $title): static
@@ -111,6 +114,7 @@ class Category
      * Set created at.
      *
      * @param \DateTimeImmutable $createdAt
+     *
      * @return $this
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
@@ -134,6 +138,7 @@ class Category
      * Set updated at.
      *
      * @param \DateTimeImmutable $updatedAt
+     *
      * @return $this
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
@@ -157,6 +162,7 @@ class Category
      * Set slug.
      *
      * @param string|null $slug
+     *
      * @return $this
      */
     public function setSlug(?string $slug): static

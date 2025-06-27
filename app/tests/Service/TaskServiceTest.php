@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Service;
 
 use App\Entity\Task;
@@ -17,35 +17,6 @@ class TaskServiceTest extends KernelTestCase
 {
     private ?EntityManagerInterface $entityManager;
     private ?TaskServiceInterface $taskService;
-
-    /**
-     * set up.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        self::bootKernel();
-        $container = static::getContainer();
-        $this->entityManager = $container->get('doctrine.orm.entity_manager');
-        $this->taskService = $container->get(TaskService::class);
-    }
-
-    /**
-     * Test create category
-     *
-     * @param string $title
-     * @return Category
-     */
-    private function createCategory(string $title = 'Test Category'): Category
-    {
-        $category = new Category();
-        $category->setTitle($title);
-        $this->entityManager->persist($category);
-        $this->entityManager->flush();
-
-        return $category;
-    }
 
     /**
      * Test save.
@@ -132,5 +103,35 @@ class TaskServiceTest extends KernelTestCase
 
         // then
         $this->assertEquals($expectedResultSize, $result->count());
+    }
+
+    /**
+     * set up.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        self::bootKernel();
+        $container = static::getContainer();
+        $this->entityManager = $container->get('doctrine.orm.entity_manager');
+        $this->taskService = $container->get(TaskService::class);
+    }
+
+    /**
+     * Test create category
+     *
+     * @param string $title
+     *
+     * @return Category
+     */
+    private function createCategory(string $title = 'Test Category'): Category
+    {
+        $category = new Category();
+        $category->setTitle($title);
+        $this->entityManager->persist($category);
+        $this->entityManager->flush();
+
+        return $category;
     }
 }

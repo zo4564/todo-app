@@ -42,8 +42,8 @@ class NoteService implements NoteServiceInterface
     /**
      * Constructor.
      *
-     * @param NoteRepository $noteRepository
-     * @param TaskRepository $taskRepository
+     * @param NoteRepository     $noteRepository
+     * @param TaskRepository     $taskRepository
      * @param PaginatorInterface $paginator
      */
     public function __construct(private readonly NoteRepository $noteRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)

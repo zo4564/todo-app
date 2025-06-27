@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Entity;
 
 use App\Repository\NoteRepository;
@@ -8,6 +8,9 @@ use Doctrine\DBAL\Types\Types;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
+/**
+ * Note class.
+ */
 #[ORM\Entity(repositoryClass: NoteRepository::class)]
 class Note
 {
@@ -83,6 +86,7 @@ class Note
      * Set created at.
      *
      * @param \DateTimeImmutable $createdAt
+     *
      * @return $this
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
@@ -106,6 +110,7 @@ class Note
      * Set updated at.
      *
      * @param \DateTimeImmutable $updatedAt
+     *
      * @return $this
      */
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
@@ -129,6 +134,7 @@ class Note
      * Set slug.
      *
      * @param string $slug
+     *
      * @return $this
      */
     public function setSlug(string $slug): static
@@ -152,6 +158,7 @@ class Note
      * Set title.
      *
      * @param string $title
+     *
      * @return $this
      */
     public function setTitle(string $title): static

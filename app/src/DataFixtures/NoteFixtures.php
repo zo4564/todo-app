@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\DataFixtures;
 
 use App\Entity\Note;

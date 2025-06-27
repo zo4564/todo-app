@@ -4,6 +4,8 @@
  * Category controller.
  */
 
+
+
 namespace App\Controller;
 
 use App\Entity\Category;
@@ -27,7 +29,7 @@ class CategoryController extends AbstractController
      * Constructor.
      *
      * @param CategoryServiceInterface $categoryService
-     * @param TranslatorInterface $translator
+     * @param TranslatorInterface      $translator
      */
     public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly TranslatorInterface $translator)
     {

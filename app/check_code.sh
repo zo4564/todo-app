@@ -8,8 +8,7 @@ rm -f -- .php-cs-fixer.dist.php
 rm -f -- .php-cs-fixer.cache
 
 echo "Running php-cs-fixer..."
-./vendor/bin/php-cs-fixer fix src/ -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
-./vendor/bin/php-cs-fixer fix tests/ -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
+./vendor/bin/php-cs-fixer fix >> $RESULT_FILE
 rm -f -- .php-cs-fixer.dist.php
 rm -f -- .php-cs-fixer.cache
 

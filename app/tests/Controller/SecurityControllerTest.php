@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

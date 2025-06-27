@@ -1,5 +1,5 @@
 <?php
-
+// (c) 2025 zos
 namespace App\Tests\Service;
 
 use App\Entity\Note;
@@ -18,41 +18,6 @@ class NoteServiceTest extends KernelTestCase
 {
     private ?EntityManagerInterface $entityManager;
     private ?NoteServiceInterface $noteService;
-
-    /**
-     * Set up.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        self::bootKernel();
-        $container = static::getContainer();
-        $this->entityManager = $container->get('doctrine.orm.entity_manager');
-        $this->noteService = $container->get(NoteService::class);
-    }
-
-    /**
-     * Test create task
-     *
-     * @param string $title
-     * @return Task
-     */
-    private function createTask(string $title = 'Related Task'): Task
-    {
-        $category = new Category();
-        $category->setTitle('Test Category');
-        $this->entityManager->persist($category);
-
-        $task = new Task();
-        $task->setTitle($title);
-        $task->setCategory($category);
-
-        $this->entityManager->persist($task);
-        $this->entityManager->flush();
-
-        return $task;
-    }
 
     /**
      * Test save
@@ -155,5 +120,41 @@ class NoteServiceTest extends KernelTestCase
         // then
         $this->assertNotNull($fetchedNote);
         $this->assertEquals($note->getTitle(), $fetchedNote->getTitle());
+    }
+
+    /**
+     * Set up.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        self::bootKernel();
+        $container = static::getContainer();
+        $this->entityManager = $container->get('doctrine.orm.entity_manager');
+        $this->noteService = $container->get(NoteService::class);
+    }
+    
+    /**
+     * Test create task
+     *
+     * @param string $title
+     *
+     * @return Task
+     */
+    private function createTask(string $title = 'Related Task'): Task
+    {
+        $category = new Category();
+        $category->setTitle('Test Category');
+        $this->entityManager->persist($category);
+
+        $task = new Task();
+        $task->setTitle($title);
+        $task->setCategory($category);
+
+        $this->entityManager->persist($task);
+        $this->entityManager->flush();
+
+        return $task;
     }
 }
