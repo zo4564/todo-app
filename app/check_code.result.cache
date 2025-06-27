@@ -23,18 +23,6 @@ WARNING: The Symfony standard uses 1 deprecated sniff
 
 Deprecated sniffs are still run, but will stop working at some point in the future.
 
-
-FILE: /home/wwwroot/app/src/Service/CategoryService.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 37 | ERROR | [x] Expected 5 spaces after parameter type; 1 found
-----------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------
-
-Time: 988ms; Memory: 10MB
-
 WARNING: The Symfony standard uses 1 deprecated sniff
 -------------------------------------------------------------------------------
 -  Generic.Functions.CallTimePassByReference
@@ -52,63 +40,18 @@ FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
 PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
-Time: 411ms; Memory: 8MB
+Time: 404ms; Memory: 8MB
 
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
  ------- -------- ---- ---------------------- 
 
- ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
-  State       Domain     Id                                Message Preview (pl)              Fallback Message Preview (en)             
- ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
-   missing    messages   message.created_successfully      message.created_successfully      Record created successfully.              
-   missing    messages   message.edited_successfully       message.edited_successfully       Record updated successfully.              
-   missing    messages   message.category_contains_tasks   message.category_contains_tasks   This category contains tasks and cann...  
-   missing    messages   message.deleted_successfully      message.deleted_successfully      Record deleted successfully.              
-   missing    messages   title.note_list                   title.note_list                   Note List                                 
-   missing    messages   label.note_create                 label.note_create                 Create Note                               
-   missing    messages   label.id                          label.id                          Id                                        
-   missing    messages   label.created_at                  label.created_at                  Created At                                
-   missing    messages   label.updated_at                  label.updated_at                  Updated At                                
-   missing    messages   label.title                       label.title                       Title                                     
-   missing    messages   label.actions                     label.actions                     Actions                                   
-   missing    messages   action.view                       action.view                       View                                      
-   missing    messages   action.edit                       action.edit                       Edit                                      
-   missing    messages   action.delete                     action.delete                     Delete                                    
-   missing    messages   message.empty_list                message.empty_list                List is empty.                            
-   missing    messages   title.note_delete                 title.note_delete                 Delete Note                               
-   missing    messages   title.note_details                title.note_details                Note Details                              
-   missing    messages   action.back_to_list               action.back_to_list               Back to List                              
-   missing    messages   message.record_not_found          message.record_not_found          Record not found.                         
-   missing    messages   title.note_edit                   title.note_edit                   Edit Note                                 
-   missing    messages   title.note_create                 title.note_create                 Create Note                               
-   missing    messages   action.save                       action.save                       Save                                      
-   missing    messages   action.logout                     action.logout                     Logout                                    
-   missing    messages   action.login                      action.login                      Login                                     
-   missing    messages   title.task_list                   title.task_list                   Task List                                 
-   missing    messages   label.task_create                 label.task_create                 Create Task                               
-   missing    messages   label_category                    label_category                    Category                                  
-   missing    messages   title.task_delete                 title.task_delete                 Delete Task                               
-   missing    messages   title.task_details                title.task_details                Task Details                              
-   missing    messages   label.category                    label.category                    Category                                  
-   missing    messages   title.notes                       title.notes                       Notes                                     
-   missing    messages   message.no_notes                  message.no_notes                  No notes available.                       
-   missing    messages   title.task_edit                   title.task_edit                   Edit Task                                 
-   missing    messages   title.task_create                 title.task_create                 Create Task                               
-   missing    messages   message.form_error                message.form_error                There were errors in the form.            
-   missing    messages   title.record_list                 title.record_list                 Record List                               
-   missing    messages   label.content                     label.content                     Content                                   
-   missing    messages   title.category_list               title.category_list               Category List                             
-   missing    messages   label.category_create             label.category_create             Create Category                           
-   missing    messages   title.category_delete             title.category_delete             Delete Category                           
-   missing    messages   title.category_details            title.category_details            Category Details                          
-   missing    messages   label.slug                        label.slug                        Slug                                      
-   missing    messages   title.category_edit               title.category_edit               Edit Category                             
-   missing    messages   title.category_create             title.category_create             Create Category                           
- ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
+ ------- -------- ---- ---------------------- ------------------------------- 
+  State   Domain   Id   Message Preview (pl)   Fallback Message Preview (en)  
+ ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20250626162417
-[notice] finished in 719.8ms, used 14M memory, 8 migrations executed, 23 sql queries
+[notice] finished in 989.2ms, used 14M memory, 8 migrations executed, 23 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250626162417                                        
 
