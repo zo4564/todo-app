@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Note service interface.
  */
@@ -21,6 +22,7 @@ interface NoteServiceInterface
      * @return Note|null Note entity
      */
     public function findOneByTitle(string $title): ?Note;
+
     /**
      * Get paginated list.
      *
@@ -29,11 +31,11 @@ interface NoteServiceInterface
      * @return PaginationInterface<string, mixed> Paginated list
      */
     public function getPaginatedList(int $page): PaginationInterface;
+
     /**
      * Save entity.
      *
      * @param Note $note Note entity
      */
     public function save(Note $note): void;
-
 }

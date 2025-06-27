@@ -175,7 +175,7 @@ class TaskController extends AbstractController
         ]);
         $form->handleRequest($request);
 
-        //if ($form->isSubmitted() && $form->isValid()) {
+        // if ($form->isSubmitted() && $form->isValid()) {
         if (true) {
             $this->taskService->delete($task);
 

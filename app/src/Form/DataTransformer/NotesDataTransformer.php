@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Notes data transformer.
  */
@@ -57,7 +58,7 @@ class NotesDataTransformer implements DataTransformerInterface
      */
     public function reverseTransform($value): array
     {
-        $noteTitles = explode('#', $value);
+        $noteTitles = explode(',', $value);
 
         $notes = [];
 

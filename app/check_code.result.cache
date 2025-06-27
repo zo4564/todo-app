@@ -1,0 +1,349 @@
+
+Fixed 0 of 31 files in 0.491 seconds, 18.00 MB memory used
+
+Fixed 0 of 12 files in 0.167 seconds, 18.00 MB memory used
+WARNING: The Symfony standard uses 1 deprecated sniff
+-------------------------------------------------------------------------------
+-  Generic.Functions.CallTimePassByReference
+   This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
+
+Deprecated sniffs are still run, but will stop working at some point in the future.
+
+
+FILE: /home/wwwroot/app/src/Repository/NoteRepository.php
+------------------------------------------------------------------------
+FOUND 1 ERROR AND 1 WARNING AFFECTING 2 LINES
+------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 20 | ERROR   | Missing doc comment for function __construct()
+------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Repository/UserRepository.php
+------------------------------------------------------------------------
+FOUND 3 ERRORS AND 1 WARNING AFFECTING 3 LINES
+------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 17 | ERROR   | Missing doc comment for function __construct()
+ 22 | ERROR   | Doc comment for parameter "$user" missing
+ 22 | ERROR   | Doc comment for parameter "$newHashedPassword" missing
+------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Entity/Note.php
+------------------------------------------------------------------------
+FOUND 10 ERRORS AND 1 WARNING AFFECTING 11 LINES
+------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 12 | ERROR   | Missing doc comment for class Note
+ 37 | ERROR   | Missing doc comment for function getId()
+ 42 | ERROR   | Missing doc comment for function getCreatedAt()
+ 47 | ERROR   | Missing doc comment for function setCreatedAt()
+ 54 | ERROR   | Missing doc comment for function getUpdatedAt()
+ 59 | ERROR   | Missing doc comment for function setUpdatedAt()
+ 66 | ERROR   | Missing doc comment for function getSlug()
+ 71 | ERROR   | Missing doc comment for function setSlug()
+ 78 | ERROR   | Missing doc comment for function getTitle()
+ 83 | ERROR   | Missing doc comment for function setTitle()
+------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Entity/Category.php
+------------------------------------------------------------------------
+FOUND 10 ERRORS AND 1 WARNING AFFECTING 11 LINES
+------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 13 | ERROR   | Missing doc comment for class Category
+ 42 | ERROR   | Missing doc comment for function getId()
+ 47 | ERROR   | Missing doc comment for function getTitle()
+ 52 | ERROR   | Missing doc comment for function setTitle()
+ 59 | ERROR   | Missing doc comment for function getCreatedAt()
+ 64 | ERROR   | Missing doc comment for function setCreatedAt()
+ 71 | ERROR   | Missing doc comment for function getUpdatedAt()
+ 76 | ERROR   | Missing doc comment for function setUpdatedAt()
+ 83 | ERROR   | Missing doc comment for function getSlug()
+ 88 | ERROR   | Missing doc comment for function setSlug()
+------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Service/CategoryService.php
+-----------------------------------------------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 2 LINES
+-----------------------------------------------------------------------------------------------------------
+ 33 | ERROR | Doc comment for parameter "$categoryRepository" missing
+ 33 | ERROR | Doc comment for parameter "$taskRepository" missing
+ 36 | ERROR | Doc comment for parameter $paginator does not match actual variable name $categoryRepository
+-----------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Service/NoteService.php
+-------------------------------------------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 2 LINES
+-------------------------------------------------------------------------------------------------------
+ 42 | ERROR | Doc comment for parameter "$noteRepository" missing
+ 42 | ERROR | Doc comment for parameter "$taskRepository" missing
+ 45 | ERROR | Doc comment for parameter $paginator does not match actual variable name $noteRepository
+-------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Controller/NoteController.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 26 | ERROR | Doc comment for parameter "$translator" missing
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Controller/CategoryController.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 26 | ERROR | Doc comment for parameter "$translator" missing
+----------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/DataFixtures/AppFixtures.php
+------------------------------------------------------------------------
+FOUND 2 ERRORS AND 1 WARNING AFFECTING 3 LINES
+------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+  8 | ERROR   | Missing doc comment for class AppFixtures
+ 10 | ERROR   | Missing doc comment for function load()
+------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/DataFixtures/NoteFixtures.php
+-----------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+-----------------------------------------------------------------------
+ 3 | WARNING | The license block has to be present at the top
+   |         |                 of every PHP file, before the namespace
+-----------------------------------------------------------------------
+
+Time: 876ms; Memory: 10MB
+
+WARNING: The Symfony standard uses 1 deprecated sniff
+-------------------------------------------------------------------------------
+-  Generic.Functions.CallTimePassByReference
+   This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
+
+Deprecated sniffs are still run, but will stop working at some point in the future.
+
+
+FILE: /home/wwwroot/app/tests/Entity/NoteTest.php
+-------------------------------------------------------------------------
+FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
+-------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+  8 | ERROR   | Missing doc comment for class NoteTest
+ 10 | ERROR   | Missing doc comment for function testGettersAndSetters()
+ 29 | ERROR   | Missing doc comment for function testDefaultIdIsNull()
+-------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Entity/TaskTest.php
+-------------------------------------------------------------------------
+FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
+-------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 10 | ERROR   | Missing doc comment for class TaskTest
+ 12 | ERROR   | Missing doc comment for function testGettersAndSetters()
+ 38 | ERROR   | Missing doc comment for function testNotesCollection()
+-------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Entity/UserTest.php
+-----------------------------------------------------------------------------------
+FOUND 6 ERRORS AND 1 WARNING AFFECTING 7 LINES
+-----------------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+  9 | ERROR   | Missing doc comment for class UserTest
+ 11 | ERROR   | Missing doc comment for function testDefaultValues()
+ 22 | ERROR   | Missing doc comment for function testEmail()
+ 32 | ERROR   | Missing doc comment for function testPassword()
+ 41 | ERROR   | Missing doc comment for function testRoles()
+ 54 | ERROR   | Missing doc comment for function testEraseCredentialsDoesNothing()
+-----------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Entity/CategoryTest.php
+-------------------------------------------------------------------------
+FOUND 3 ERRORS AND 1 WARNING AFFECTING 4 LINES
+-------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+  8 | ERROR   | Missing doc comment for class CategoryTest
+ 10 | ERROR   | Missing doc comment for function testGettersAndSetters()
+ 29 | ERROR   | Missing doc comment for function testDefaultIdIsNull()
+-------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Service/TaskServiceTest.php
+------------------------------------------------------------------------------------------
+FOUND 7 ERRORS AND 1 WARNING AFFECTING 7 LINES
+------------------------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 13 | ERROR   | Missing doc comment for class TaskServiceTest
+ 18 | ERROR   | Missing doc comment for function setUp()
+ 26 | ERROR   | Missing doc comment for function createCategory()
+ 36 | ERROR   | Declare public methods first,then protected ones and finally private ones
+ 36 | ERROR   | Missing doc comment for function testSave()
+ 60 | ERROR   | Missing doc comment for function testDelete()
+ 86 | ERROR   | Missing doc comment for function testGetPaginatedList()
+------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Service/NoteServiceTest.php
+-------------------------------------------------------------------------------------------
+FOUND 8 ERRORS AND 1 WARNING AFFECTING 8 LINES
+-------------------------------------------------------------------------------------------
+   3 | WARNING | The license block has to be present at the top
+     |         |                 of every PHP file, before the namespace
+  14 | ERROR   | Missing doc comment for class NoteServiceTest
+  19 | ERROR   | Missing doc comment for function setUp()
+  27 | ERROR   | Missing doc comment for function createTask()
+  43 | ERROR   | Declare public methods first,then protected ones and finally private ones
+  43 | ERROR   | Missing doc comment for function testSave()
+  65 | ERROR   | Missing doc comment for function testDelete()
+  90 | ERROR   | Missing doc comment for function testGetPaginatedList()
+ 110 | ERROR   | Missing doc comment for function testFindOneByTitle()
+-------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/TaskControllerTest.php
+------------------------------------------------------------------------------------------
+FOUND 5 ERRORS AND 1 WARNING AFFECTING 5 LINES
+------------------------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 11 | ERROR   | Missing doc comment for class TaskControllerTest
+ 13 | ERROR   | Missing doc comment for function createUser()
+ 31 | ERROR   | Missing doc comment for function setUp()
+ 39 | ERROR   | Declare public methods first,then protected ones and finally private ones
+ 39 | ERROR   | Missing doc comment for function testCreate()
+------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/NoteControllerTest.php
+-------------------------------------------------------------------------------------------------------------------------
+FOUND 9 ERRORS AND 1 WARNING AFFECTING 9 LINES
+-------------------------------------------------------------------------------------------------------------------------
+  3 | WARNING | [ ] The license block has to be present at the top
+    |         |                     of every PHP file, before the namespace
+ 11 | ERROR   | [ ] Missing doc comment for class NoteControllerTest
+ 15 | ERROR   | [ ] Missing doc comment for function createUser()
+ 33 | ERROR   | [ ] Missing doc comment for function setUp()
+ 41 | ERROR   | [ ] Declare public methods first,then protected ones and finally private ones
+ 41 | ERROR   | [ ] Missing doc comment for function testIndexPage()
+ 51 | ERROR   | [x] Function closing brace must go on the next line following the body; found 1 blank lines before brace
+ 53 | ERROR   | [ ] Missing doc comment for function testCreatePageGet()
+ 63 | ERROR   | [ ] Missing doc comment for function testCreateNote()
+ 79 | ERROR   | [x] Function closing brace must go on the next line following the body; found 1 blank lines before brace
+-------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/CategoryControllerTest.php
+------------------------------------------------------------------------------------------
+FOUND 6 ERRORS AND 1 WARNING AFFECTING 6 LINES
+------------------------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+ 19 | ERROR   | Missing doc comment for function createUser()
+ 37 | ERROR   | Missing doc comment for function setUp()
+ 45 | ERROR   | Declare public methods first,then protected ones and finally private ones
+ 45 | ERROR   | Missing doc comment for function testIndexPage()
+ 53 | ERROR   | Missing doc comment for function testCreatePageGet()
+ 61 | ERROR   | Missing doc comment for function testCreateCategory()
+------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/tests/Controller/SecurityControllerTest.php
+-------------------------------------------------------------------------------------------
+FOUND 4 ERRORS AND 1 WARNING AFFECTING 5 LINES
+-------------------------------------------------------------------------------------------
+  3 | WARNING | The license block has to be present at the top
+    |         |                 of every PHP file, before the namespace
+  7 | ERROR   | Missing doc comment for class SecurityControllerTest
+  9 | ERROR   | Missing doc comment for function testLoginPageLoadsSuccessfully()
+ 19 | ERROR   | Missing doc comment for function testLoginWithWrongCredentialsShowsError()
+ 37 | ERROR   | Missing doc comment for function testLogoutActionThrowsLogicException()
+-------------------------------------------------------------------------------------------
+
+Time: 378ms; Memory: 8MB
+
+ ------- -------- ---- ---------------------- 
+  State   Domain   Id   Message Preview (en)  
+ ------- -------- ---- ---------------------- 
+
+ ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
+  State       Domain     Id                                Message Preview (pl)              Fallback Message Preview (en)             
+ ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
+   missing    messages   message.created_successfully      message.created_successfully      Record created successfully.              
+   missing    messages   message.edited_successfully       message.edited_successfully       Record updated successfully.              
+   missing    messages   message.category_contains_tasks   message.category_contains_tasks   This category contains tasks and cann...  
+   missing    messages   message.deleted_successfully      message.deleted_successfully      Record deleted successfully.              
+   missing    messages   title.note_list                   title.note_list                   Note List                                 
+   missing    messages   label.note_create                 label.note_create                 Create Note                               
+   missing    messages   label.id                          label.id                          Id                                        
+   missing    messages   label.created_at                  label.created_at                  Created At                                
+   missing    messages   label.updated_at                  label.updated_at                  Updated At                                
+   missing    messages   label.title                       label.title                       Title                                     
+   missing    messages   label.actions                     label.actions                     Actions                                   
+   missing    messages   action.view                       action.view                       View                                      
+   missing    messages   action.edit                       action.edit                       Edit                                      
+   missing    messages   action.delete                     action.delete                     Delete                                    
+   missing    messages   message.empty_list                message.empty_list                List is empty.                            
+   missing    messages   title.note_delete                 title.note_delete                 Delete Note                               
+   missing    messages   title.note_details                title.note_details                Note Details                              
+   missing    messages   action.back_to_list               action.back_to_list               Back to List                              
+   missing    messages   message.record_not_found          message.record_not_found          Record not found.                         
+   missing    messages   title.note_edit                   title.note_edit                   Edit Note                                 
+   missing    messages   title.note_create                 title.note_create                 Create Note                               
+   missing    messages   action.save                       action.save                       Save                                      
+   missing    messages   action.logout                     action.logout                     Logout                                    
+   missing    messages   action.login                      action.login                      Login                                     
+   missing    messages   title.task_list                   title.task_list                   Task List                                 
+   missing    messages   label.task_create                 label.task_create                 Create Task                               
+   missing    messages   label_category                    label_category                    Category                                  
+   missing    messages   title.task_delete                 title.task_delete                 Delete Task                               
+   missing    messages   title.task_details                title.task_details                Task Details                              
+   missing    messages   label.category                    label.category                    Category                                  
+   missing    messages   title.notes                       title.notes                       Notes                                     
+   missing    messages   message.no_notes                  message.no_notes                  No notes available.                       
+   missing    messages   title.task_edit                   title.task_edit                   Edit Task                                 
+   missing    messages   title.task_create                 title.task_create                 Create Task                               
+   missing    messages   message.form_error                message.form_error                There were errors in the form.            
+   missing    messages   title.record_list                 title.record_list                 Record List                               
+   missing    messages   label.content                     label.content                     Content                                   
+   missing    messages   title.category_list               title.category_list               Category List                             
+   missing    messages   label.category_create             label.category_create             Create Category                           
+   missing    messages   title.category_delete             title.category_delete             Delete Category                           
+   missing    messages   title.category_details            title.category_details            Category Details                          
+   missing    messages   label.slug                        label.slug                        Slug                                      
+   missing    messages   title.category_edit               title.category_edit               Edit Category                             
+   missing    messages   title.category_create             title.category_create             Create Category                           
+ ----------- ---------- --------------------------------- --------------------------------- ------------------------------------------ 
+
+[notice] Migrating up to DoctrineMigrations\Version20250626162417
+[notice] finished in 693.3ms, used 14M memory, 8 migrations executed, 23 sql queries
+
+ [OK] Successfully migrated to version: DoctrineMigrations\Version20250626162417                                        
+
+
+   > purging database
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\NoteFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\TaskFixtures

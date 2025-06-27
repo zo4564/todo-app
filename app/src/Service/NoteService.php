@@ -9,8 +9,6 @@ namespace App\Service;
 use App\Repository\NoteRepository;
 use App\Entity\Note;
 use App\Repository\TaskRepository;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -44,8 +42,6 @@ class NoteService implements NoteServiceInterface
     /**
      * Constructor.
      *
-     * @param NoteRepository $noteRepository
-     * @param TaskRepository $taskRepository
      * @param PaginatorInterface $paginator Paginator
      */
     public function __construct(private readonly NoteRepository $noteRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
@@ -92,6 +88,4 @@ class NoteService implements NoteServiceInterface
     {
         $this->noteRepository->delete($note);
     }
-
-
 }

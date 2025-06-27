@@ -26,17 +26,162 @@
         <source>message.empty_list</source>
         <target>List is empty.</target>
       </trans-unit>
+
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Record created successfully.</target>
+      </trans-unit>
+      <trans-unit id="message.edited_successfully">
+        <source>message.edited_successfully</source>
+        <target>Record updated successfully.</target>
+      </trans-unit>
+      <trans-unit id="message.category_contains_tasks">
+        <source>message.category_contains_tasks</source>
+        <target>This category contains tasks and cannot be deleted.</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Record deleted successfully.</target>
+      </trans-unit>
+      <trans-unit id="title.note_list">
+        <source>title.note_list</source>
+        <target>Note List</target>
+      </trans-unit>
+      <trans-unit id="label.note_create">
+        <source>label.note_create</source>
+        <target>Create Note</target>
+      </trans-unit>
+      <trans-unit id="label.created_at">
+        <source>label.created_at</source>
+        <target>Created At</target>
+      </trans-unit>
+      <trans-unit id="label.updated_at">
+        <source>label.updated_at</source>
+        <target>Updated At</target>
+      </trans-unit>
+      <trans-unit id="action.view">
+        <source>action.view</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="title.note_delete">
+        <source>title.note_delete</source>
+        <target>Delete Note</target>
+      </trans-unit>
+      <trans-unit id="title.note_details">
+        <source>title.note_details</source>
+        <target>Note Details</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Back to List</target>
+      </trans-unit>
       <trans-unit id="message.record_not_found">
         <source>message.record_not_found</source>
         <target>Record not found.</target>
       </trans-unit>
+      <trans-unit id="title.note_edit">
+        <source>title.note_edit</source>
+        <target>Edit Note</target>
+      </trans-unit>
+      <trans-unit id="title.note_create">
+        <source>title.note_create</source>
+        <target>Create Note</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="title.task_list">
+        <source>title.task_list</source>
+        <target>Task List</target>
+      </trans-unit>
+      <trans-unit id="label.task_create">
+        <source>label.task_create</source>
+        <target>Create Task</target>
+      </trans-unit>
+      <trans-unit id="label_category">
+        <source>label_category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="title.task_delete">
+        <source>title.task_delete</source>
+        <target>Delete Task</target>
+      </trans-unit>
+      <trans-unit id="title.task_details">
+        <source>title.task_details</source>
+        <target>Task Details</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+        <source>label.category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="title.notes">
+        <source>title.notes</source>
+        <target>Notes</target>
+      </trans-unit>
+      <trans-unit id="message.no_notes">
+        <source>message.no_notes</source>
+        <target>No notes available.</target>
+      </trans-unit>
+      <trans-unit id="title.task_edit">
+        <source>title.task_edit</source>
+        <target>Edit Task</target>
+      </trans-unit>
+      <trans-unit id="title.task_create">
+        <source>title.task_create</source>
+        <target>Create Task</target>
+      </trans-unit>
+      <trans-unit id="message.form_error">
+        <source>message.form_error</source>
+        <target>There were errors in the form.</target>
+      </trans-unit>
       <trans-unit id="title.record_list">
         <source>title.record_list</source>
-        <target>Records list</target>
+        <target>Record List</target>
       </trans-unit>
-      <trans-unit id="title.record_view">
-        <source>title.record_view</source>
-        <target>Record view #%id%</target>
+      <trans-unit id="title.category_list">
+        <source>title.category_list</source>
+        <target>Category List</target>
+      </trans-unit>
+      <trans-unit id="label.category_create">
+        <source>label.category_create</source>
+        <target>Create Category</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+        <source>title.category_delete</source>
+        <target>Delete Category</target>
+      </trans-unit>
+      <trans-unit id="title.category_details">
+        <source>title.category_details</source>
+        <target>Category Details</target>
+      </trans-unit>
+      <trans-unit id="label.slug">
+        <source>label.slug</source>
+        <target>Slug</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+        <source>title.category_edit</source>
+        <target>Edit Category</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+        <source>title.category_create</source>
+        <target>Create Category</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="action.login">
+        <source>action.login</source>
+        <target>Login</target>
       </trans-unit>
     </body>
   </file>

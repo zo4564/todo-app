@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Form\Type\NoteType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
+
 /**
  * Class NoteController.
  */
@@ -108,8 +109,8 @@ class NoteController extends AbstractController
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
-     * @param Note $note Note entity
+     * @param Request $request HTTP request
+     * @param Note    $note    Note entity
      *
      * @return Response HTTP response
      */
@@ -154,8 +155,8 @@ class NoteController extends AbstractController
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
-     * @param Note $note Note entity
+     * @param Request $request HTTP request
+     * @param Note    $note    Note entity
      *
      * @return Response HTTP response
      */
@@ -175,7 +176,7 @@ class NoteController extends AbstractController
         ]);
         $form->handleRequest($request);
 
-//        if ($form->isSubmitted() && $form->isValid()) {
+        //        if ($form->isSubmitted() && $form->isValid()) {
         if (true) {
             $this->noteService->delete($note);
 

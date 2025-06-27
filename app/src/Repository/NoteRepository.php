@@ -17,6 +17,11 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class NoteRepository extends ServiceEntityRepository
 {
+    /**
+     * Constructor
+     *
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Note::class);
@@ -31,6 +36,7 @@ class NoteRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('note');
     }
+
     /**
      * Save entity.
      *
@@ -41,6 +47,7 @@ class NoteRepository extends ServiceEntityRepository
         $this->getEntityManager()->persist($note);
         $this->getEntityManager()->flush();
     }
+
     /**
      * Delete entity.
      *

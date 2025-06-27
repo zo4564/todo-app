@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Form\Type\CategoryType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
+
 /**
  * Class CategoryController.
  */
@@ -182,8 +183,8 @@ class CategoryController extends AbstractController
         ]);
         $form->handleRequest($request);
 
-//        if ($form->isSubmitted() && $form->isValid()) {
-          if (true) {
+        //        if ($form->isSubmitted() && $form->isValid()) {
+        if (true) {
             $this->categoryService->delete($category);
 
             $this->addFlash(
