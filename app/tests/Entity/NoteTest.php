@@ -5,8 +5,16 @@ namespace App\Tests\Entity;
 use App\Entity\Note;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Note test class.
+ */
 class NoteTest extends TestCase
 {
+    /**
+     * Test getter and setter.
+     *
+     * @return void
+     */
     public function testGettersAndSetters()
     {
         $note = new Note();
@@ -26,6 +34,11 @@ class NoteTest extends TestCase
         $this->assertSame('test-note-slug', $note->getSlug());
     }
 
+    /**
+     * Test default id is null.
+     *
+     * @return void
+     */
     public function testDefaultIdIsNull()
     {
         $note = new Note();

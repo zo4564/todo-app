@@ -8,8 +8,17 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Category;
 
+/**
+ * Task controller test class.
+ */
 class TaskControllerTest extends WebTestCase
 {
+    /**
+     * Create user.
+     *
+     * @param array $roles
+     * @return User
+     */
     private function createUser(array $roles): User
     {
         $passwordHasher = static::getContainer()->get('security.password_hasher');
@@ -28,6 +37,11 @@ class TaskControllerTest extends WebTestCase
         return $user;
     }
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -36,6 +50,11 @@ class TaskControllerTest extends WebTestCase
         $this->client->loginUser($adminUser);
     }
 
+    /**
+     * Test create
+     *
+     * @return void
+     */
     public function testCreate()
     {
 

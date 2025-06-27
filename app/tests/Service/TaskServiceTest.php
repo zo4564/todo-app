@@ -10,11 +10,19 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+/**
+ * Task service test class.
+ */
 class TaskServiceTest extends KernelTestCase
 {
     private ?EntityManagerInterface $entityManager;
     private ?TaskServiceInterface $taskService;
 
+    /**
+     * set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         self::bootKernel();
@@ -23,6 +31,12 @@ class TaskServiceTest extends KernelTestCase
         $this->taskService = $container->get(TaskService::class);
     }
 
+    /**
+     * Test create category
+     *
+     * @param string $title
+     * @return Category
+     */
     private function createCategory(string $title = 'Test Category'): Category
     {
         $category = new Category();
@@ -33,6 +47,11 @@ class TaskServiceTest extends KernelTestCase
         return $category;
     }
 
+    /**
+     * Test save.
+     *
+     * @return void
+     */
     public function testSave(): void
     {
         // given
@@ -57,6 +76,11 @@ class TaskServiceTest extends KernelTestCase
         $this->assertEquals($expectedTask, $resultTask);
     }
 
+    /**
+     * Test delete.
+     *
+     * @return void
+     */
     public function testDelete(): void
     {
         // given
@@ -83,6 +107,11 @@ class TaskServiceTest extends KernelTestCase
         $this->assertNull($resultTask);
     }
 
+    /**
+     * Test get paginated list.
+     *
+     * @return void
+     */
     public function testGetPaginatedList(): void
     {
         // given

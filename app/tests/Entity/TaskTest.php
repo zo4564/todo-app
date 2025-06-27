@@ -7,8 +7,16 @@ use App\Entity\Note;
 use App\Entity\Task;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Task test class.
+ */
 class TaskTest extends TestCase
 {
+    /**
+     * Test getter and setter.
+     *
+     * @return void
+     */
     public function testGettersAndSetters()
     {
         $task = new Task();
@@ -35,6 +43,11 @@ class TaskTest extends TestCase
         $this->assertSame($category, $task->getCategory());
     }
 
+    /**
+     * Test notes collection.
+     *
+     * @return void
+     */
     public function testNotesCollection()
     {
         $task = new Task();

@@ -16,6 +16,12 @@ class CategoryControllerTest extends WebTestCase
     private \Symfony\Bundle\FrameworkBundle\KernelBrowser $client;
     private EntityManagerInterface $entityManager;
 
+    /**
+     * Test create user.
+     *
+     * @param array $roles
+     * @return User
+     */
     private function createUser(array $roles): User
     {
         $passwordHasher = static::getContainer()->get('security.password_hasher');
@@ -34,6 +40,11 @@ class CategoryControllerTest extends WebTestCase
         return $user;
     }
 
+    /**
+     * Test set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -42,6 +53,11 @@ class CategoryControllerTest extends WebTestCase
         $this->client->loginUser($adminUser);
     }
 
+    /**
+     * Test index page.
+     *
+     * @return void
+     */
     public function testIndexPage(): void
     {
         $this->client->request('GET', '/category');
@@ -50,6 +66,11 @@ class CategoryControllerTest extends WebTestCase
         $this->assertSelectorExists('h1');
     }
 
+    /**
+     * Test create page get.
+     *
+     * @return void
+     */
     public function testCreatePageGet(): void
     {
         $this->client->request('GET', '/category/create');
@@ -58,6 +79,11 @@ class CategoryControllerTest extends WebTestCase
         $this->assertSelectorExists('form');
     }
 
+    /**
+     * Test create category.
+     *
+     * @return void
+     */
     public function testCreateCategory(): void
     {
 

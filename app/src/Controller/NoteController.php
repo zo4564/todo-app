@@ -26,7 +26,8 @@ class NoteController extends AbstractController
     /**
      * Constructor.
      *
-     * @param NoteService $noteService Note service
+     * @param NoteService $noteService
+     * @param TranslatorInterface $translator
      */
     public function __construct(private readonly NoteService $noteService, private readonly TranslatorInterface $translator)
     {

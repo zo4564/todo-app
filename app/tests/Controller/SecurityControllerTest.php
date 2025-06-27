@@ -4,8 +4,16 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * Security controller test class
+ */
 class SecurityControllerTest extends WebTestCase
 {
+    /**
+     * Test login page loads.
+     *
+     * @return void
+     */
     public function testLoginPageLoadsSuccessfully(): void
     {
         $client = static::createClient();
@@ -16,6 +24,11 @@ class SecurityControllerTest extends WebTestCase
         $this->assertSelectorExists('form');
     }
 
+    /**
+     * Test login
+     *
+     * @return void
+     */
     public function testLoginWithWrongCredentialsShowsError(): void
     {
         $client = static::createClient();
@@ -34,6 +47,11 @@ class SecurityControllerTest extends WebTestCase
         $this->assertSelectorExists('.alert');
     }
 
+    /**
+     * Test logout action
+     *
+     * @return void
+     */
     public function testLogoutActionThrowsLogicException(): void
     {
         $this->expectException(\LogicException::class);

@@ -8,10 +8,19 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
+/**
+ * Note controller test.
+ */
 class NoteControllerTest extends WebTestCase
 {
     private ?KernelBrowser $client = null;
 
+    /**
+     * Create user.
+     *
+     * @param array $roles
+     * @return User
+     */
     private function createUser(array $roles): User
     {
         $passwordHasher = static::getContainer()->get('security.password_hasher');
@@ -30,6 +39,11 @@ class NoteControllerTest extends WebTestCase
         return $user;
     }
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->client = static::createClient();
@@ -38,6 +52,11 @@ class NoteControllerTest extends WebTestCase
         $this->client->loginUser($adminUser);
     }
 
+    /**
+     * Test index page.
+     *
+     * @return void
+     */
     public function testIndexPage(): void
     {
         $this->client->request('GET', '/note');
@@ -50,6 +69,11 @@ class NoteControllerTest extends WebTestCase
 
     }
 
+    /**
+     * Test create page get.
+     *
+     * @return void
+     */
     public function testCreatePageGet(): void
     {
         $this->client->request('GET', '/note/create');
@@ -60,6 +84,11 @@ class NoteControllerTest extends WebTestCase
         $this->assertStringContainsString('<form', $response->getContent());
     }
 
+    /**
+     * Test create note.
+     *
+     * @return void
+     */
     public function testCreateNote(): void
     {
         $crawler = $this->client->request('GET', '/note/create');

@@ -5,8 +5,16 @@ namespace App\Tests\Entity;
 use App\Entity\Category;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Category test class
+ */
 class CategoryTest extends TestCase
 {
+    /**
+     * Test getter and setter.
+     *
+     * @return void
+     */
     public function testGettersAndSetters()
     {
         $category = new Category();
@@ -26,6 +34,11 @@ class CategoryTest extends TestCase
         $this->assertSame('test-category', $category->getSlug());
     }
 
+    /**
+     * Test deafault.
+     *
+     * @return void
+     */
     public function testDefaultIdIsNull()
     {
         $category = new Category();

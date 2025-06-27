@@ -8,6 +8,11 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+    /**
+     * Test default values.
+     *
+     * @return void
+     */
     public function testDefaultValues(): void
     {
         $user = new User();
@@ -19,6 +24,11 @@ class UserTest extends TestCase
         $this->assertContains(UserRole::ROLE_USER->value, $user->getRoles());
     }
 
+    /**
+     * Test email.
+     *
+     * @return void
+     */
     public function testEmail(): void
     {
         $user = new User();
@@ -29,6 +39,11 @@ class UserTest extends TestCase
         $this->assertSame($email, $user->getUserIdentifier());
     }
 
+    /**
+     * Test password.
+     *
+     * @return void
+     */
     public function testPassword(): void
     {
         $user = new User();
@@ -38,6 +53,11 @@ class UserTest extends TestCase
         $this->assertSame($password, $user->getPassword());
     }
 
+    /**
+     * Test roles.
+     *
+     * @return void
+     */
     public function testRoles(): void
     {
         $user = new User();
@@ -51,6 +71,11 @@ class UserTest extends TestCase
         $this->assertCount(2, $roles);
     }
 
+    /**
+     * Test erase credentials.
+     *
+     * @return void
+     */
     public function testEraseCredentialsDoesNothing(): void
     {
         $user = new User();

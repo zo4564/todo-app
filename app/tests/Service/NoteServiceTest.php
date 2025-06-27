@@ -11,11 +11,19 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+/**
+ * Note service test class.
+ */
 class NoteServiceTest extends KernelTestCase
 {
     private ?EntityManagerInterface $entityManager;
     private ?NoteServiceInterface $noteService;
 
+    /**
+     * Set up.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         self::bootKernel();
@@ -24,6 +32,12 @@ class NoteServiceTest extends KernelTestCase
         $this->noteService = $container->get(NoteService::class);
     }
 
+    /**
+     * Test create task
+     *
+     * @param string $title
+     * @return Task
+     */
     private function createTask(string $title = 'Related Task'): Task
     {
         $category = new Category();
@@ -40,6 +54,11 @@ class NoteServiceTest extends KernelTestCase
         return $task;
     }
 
+    /**
+     * Test save
+     *
+     * @return void
+     */
     public function testSave(): void
     {
         // given
@@ -62,6 +81,11 @@ class NoteServiceTest extends KernelTestCase
         $this->assertEquals($note->getTitle(), $savedNote->getTitle());
     }
 
+    /**
+     * Test delete
+     *
+     * @return void
+     */
     public function testDelete(): void
     {
         // given
@@ -87,6 +111,11 @@ class NoteServiceTest extends KernelTestCase
         $this->assertNull($deletedNote);
     }
 
+    /**
+     * Test get paginated list
+     *
+     * @return void
+     */
     public function testGetPaginatedList(): void
     {
         // given
@@ -107,6 +136,11 @@ class NoteServiceTest extends KernelTestCase
         $this->assertGreaterThanOrEqual(3, $pagination->count());
     }
 
+    /**
+     * Test find one by title.
+     *
+     * @return void
+     */
     public function testFindOneByTitle(): void
     {
         // given
