@@ -182,6 +182,10 @@
                 <source>action.login</source>
                 <target>Zaloguj się</target>
             </trans-unit>
+            <trans-unit id="label.notes">
+                <source>label.notes</source>
+                <target>Notatki</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

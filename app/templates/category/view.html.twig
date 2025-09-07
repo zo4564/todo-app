@@ -37,6 +37,31 @@
             </a>
 
         </p>
+        {% if tasks is defined and tasks|length %}
+            <h3>{{ 'label.tasks'|trans }}</h3>
+            <div class="navigation text-center">
+                {{ knp_pagination_render(tasks) }}
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ knp_pagination_sortable(tasks, 'label.id'|trans, 'comment.id') }}</th>
+                    <th>{{ knp_pagination_sortable(tasks, 'label.title'|trans, 'comment.task') }}</th>
+                    <th>Pokaż</th>
+                </tr>
+                </thead>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        <td>{{ task.title }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ url('task_view', {id: task.id}) }}">
+                                {{ 'action.show'|trans }}
+                            </a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
     {% else %}
         <p>
             {{ 'message.record_not_found'|trans }}

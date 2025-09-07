@@ -1,34 +1,54 @@
+   1) src/Repository/NoteRepository.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+   2) src/Repository/UserRepository.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
+   3) src/Entity/Note.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, phpdoc_trim_consecutive_blank_line_separation)
+   4) src/Entity/Category.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, phpdoc_trim_consecutive_blank_line_separation)
+   5) src/Service/CategoryService.php (class_attributes_separation, method_argument_space, no_superfluous_phpdoc_tags, phpdoc_trim)
+   6) src/Service/CategoryServiceInterface.php (class_attributes_separation)
+   7) src/Service/NoteService.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+   8) src/Controller/NoteController.php (no_superfluous_phpdoc_tags, phpdoc_trim, blank_lines_before_namespace)
+   9) src/Controller/SecurityController.php (class_attributes_separation)
+  10) src/Controller/CategoryController.php (no_superfluous_phpdoc_tags, phpdoc_trim, blank_line_before_statement, blank_lines_before_namespace)
+  11) src/DataFixtures/AppFixtures.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+  12) src/DataFixtures/NoteFixtures.php (blank_line_after_opening_tag, blank_lines_before_namespace)
 
-Fatal error: Uncaught Error: Call to undefined method PhpCsFixer\Config::create() in /home/wwwroot/app/.php-cs-fixer.php:6
-Stack trace:
-#0 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(944): include()
-#1 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(239): PhpCsFixer\Console\ConfigurationResolver::separatedContextLessInclude()
-#2 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(580): PhpCsFixer\Console\ConfigurationResolver->getConfig()
-#3 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/ConfigurationResolver.php(421): PhpCsFixer\Console\ConfigurationResolver->resolveFormat()
-#4 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Command/FixCommand.php(258): PhpCsFixer\Console\ConfigurationResolver->getReporter()
-#5 /home/wwwroot/app/vendor/symfony/console/Command/Command.php(326): PhpCsFixer\Console\Command\FixCommand->execute()
-#6 /home/wwwroot/app/vendor/symfony/console/Application.php(1078): Symfony\Component\Console\Command\Command->run()
-#7 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Application.php(179): Symfony\Component\Console\Application->doRunCommand()
-#8 /home/wwwroot/app/vendor/symfony/console/Application.php(324): PhpCsFixer\Console\Application->doRunCommand()
-#9 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/src/Console/Application.php(101): Symfony\Component\Console\Application->doRun()
-#10 /home/wwwroot/app/vendor/symfony/console/Application.php(175): PhpCsFixer\Console\Application->doRun()
-#11 /home/wwwroot/app/vendor/friendsofphp/php-cs-fixer/php-cs-fixer(108): Symfony\Component\Console\Application->run()
-#12 /home/wwwroot/app/vendor/bin/php-cs-fixer(119): include('...')
-#13 {main}
-  thrown in /home/wwwroot/app/.php-cs-fixer.php on line 6
-WARNING: The Symfony standard uses 1 deprecated sniff
--------------------------------------------------------------------------------
--  Generic.Functions.CallTimePassByReference
-   This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
+Found 12 of 32 files that can be fixed in 1.599 seconds, 18.00 MB memory used
+   1) tests/Entity/NoteTest.php (blank_line_after_opening_tag, blank_lines_before_namespace)
+   2) tests/Entity/TaskTest.php (blank_line_after_opening_tag, blank_lines_before_namespace)
+   3) tests/Entity/UserTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
+   4) tests/Entity/CategoryTest.php (blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+   5) tests/Service/TaskServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+   6) tests/Service/NoteServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, no_whitespace_in_blank_line)
+   7) tests/Controller/TaskControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+   8) tests/Controller/NoteControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
+   9) tests/Controller/CategoryControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
+  10) tests/Controller/SecurityControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
 
-Deprecated sniffs are still run, but will stop working at some point in the future.
+Found 10 of 12 files that can be fixed in 0.664 seconds, 16.00 MB memory used
 
-WARNING: The Symfony standard uses 1 deprecated sniff
--------------------------------------------------------------------------------
--  Generic.Functions.CallTimePassByReference
-   This sniff has been deprecated since v3.12.1 and will be removed in v4.0.0.
+FILE: /home/wwwroot/app/src/Service/CategoryService.php
+------------------------------------------------------------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 3 LINES
+------------------------------------------------------------------------------------------------------------------------
+ 116 | ERROR | [x] Empty lines are not allowed in multi-line function calls
+ 116 | ERROR | [x] Empty lines are not allowed in multi-line function calls
+ 117 | ERROR | [x] Empty lines are not allowed in multi-line function calls
+ 117 | ERROR | [x] Empty lines are not allowed in multi-line function calls
+ 121 | ERROR | [x] Function closing brace must go on the next line following the body; found 2 blank lines before brace
+------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 5 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+------------------------------------------------------------------------------------------------------------------------
 
-Deprecated sniffs are still run, but will stop working at some point in the future.
+
+FILE: /home/wwwroot/app/src/Controller/CategoryController.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 72 | ERROR | [x] Missing blank line before return statement
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+Time: 2.38 secs; Memory: 10MB
 
 
 FILE: /home/wwwroot/app/tests/Service/NoteServiceTest.php
@@ -40,18 +60,28 @@ FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
 PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ----------------------------------------------------------------------
 
-Time: 404ms; Memory: 8MB
+Time: 1.05 secs; Memory: 8MB
 
- ------- -------- ---- ---------------------- 
-  State   Domain   Id   Message Preview (en)  
- ------- -------- ---- ---------------------- 
+ ----------- ---------- ------------------------- ------------------------- 
+  State       Domain     Id                        Message Preview (en)     
+ ----------- ---------- ------------------------- ------------------------- 
+   missing    messages   action.change_password    action.change_password   
+   missing    messages   message.change_password   message.change_password  
+   missing    messages   label.tasks               label.tasks              
+   missing    messages   action.show               action.show              
+ ----------- ---------- ------------------------- ------------------------- 
 
- ------- -------- ---- ---------------------- ------------------------------- 
-  State   Domain   Id   Message Preview (pl)   Fallback Message Preview (en)  
- ------- -------- ---- ---------------------- ------------------------------- 
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+  State       Domain     Id                        Message Preview (pl)      Fallback Message Preview (en)  
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+   missing    messages   action.change_password    action.change_password    action.change_password         
+   missing    messages   message.change_password   message.change_password   message.change_password        
+   missing    messages   label.tasks               label.tasks               label.tasks                    
+   missing    messages   action.show               action.show               action.show                    
+ ----------- ---------- ------------------------- ------------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20250626162417
-[notice] finished in 989.2ms, used 14M memory, 8 migrations executed, 23 sql queries
+[notice] finished in 694.2ms, used 14M memory, 8 migrations executed, 23 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250626162417                                        
 

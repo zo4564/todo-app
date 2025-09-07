@@ -99,4 +99,24 @@ class CategoryService implements CategoryServiceInterface
             return false;
         }
     }
+    /**
+     * Get a paginated list of tasks for a category.
+     *
+     * @param Category $category Category entity
+     * @param int      $page     Page number
+     *
+     * @return PaginationInterface Paginated list of tasks
+     */
+    public function getTasksByCategory(Category $category, int $page = 1): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->taskRepository->findBy(['category' => $category]),
+            $page,
+            self::PAGINATOR_ITEMS_PER_PAGE
+
+
+        );
+
+
+    }
 }
