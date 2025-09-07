@@ -186,6 +186,22 @@
                 <source>label.notes</source>
                 <target>Notatki</target>
             </trans-unit>
+            <trans-unit id="action.change_password">
+                <source>action.change_password</source>
+                <target>Zmień hasło</target>
+            </trans-unit>
+            <trans-unit id="message.change_password">
+                <source>message.change_password</source>
+                <target>Hasło zostało zmienione</target>
+            </trans-unit>
+            <trans-unit id="label.tasks">
+                <source>label.tasks</source>
+                <target>Zadania</target>
+            </trans-unit>
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>Pokaż</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -38,6 +38,7 @@ interface CategoryServiceInterface
      * @return bool Result
      */
     public function canBeDeleted(Category $category): bool;
+
     /**
      * Get a paginated list of tasks for a category.
      *

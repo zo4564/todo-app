@@ -1,18 +1,18 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Security controller test class
+ * Security controller test class.
  */
 class SecurityControllerTest extends WebTestCase
 {
     /**
      * Test login page loads.
-     *
-     * @return void
      */
     public function testLoginPageLoadsSuccessfully(): void
     {
@@ -25,9 +25,7 @@ class SecurityControllerTest extends WebTestCase
     }
 
     /**
-     * Test login
-     *
-     * @return void
+     * Test login.
      */
     public function testLoginWithWrongCredentialsShowsError(): void
     {
@@ -48,9 +46,7 @@ class SecurityControllerTest extends WebTestCase
     }
 
     /**
-     * Test logout action
-     *
-     * @return void
+     * Test logout action.
      */
     public function testLogoutActionThrowsLogicException(): void
     {

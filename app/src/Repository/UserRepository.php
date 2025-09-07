@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Repository;
 
 use App\Entity\User;
@@ -25,7 +27,8 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
-     * @param PasswordAuthenticatedUserInterface $user user
+     *
+     * @param PasswordAuthenticatedUserInterface $user              user
      * @param string                             $newHashedPassword passwd
      *
      * @return void return

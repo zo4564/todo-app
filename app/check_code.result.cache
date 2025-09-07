@@ -1,87 +1,17 @@
-   1) src/Repository/NoteRepository.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   2) src/Repository/UserRepository.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
-   3) src/Entity/Note.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, phpdoc_trim_consecutive_blank_line_separation)
-   4) src/Entity/Category.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, phpdoc_trim_consecutive_blank_line_separation)
-   5) src/Service/CategoryService.php (class_attributes_separation, method_argument_space, no_superfluous_phpdoc_tags, phpdoc_trim)
-   6) src/Service/CategoryServiceInterface.php (class_attributes_separation)
-   7) src/Service/NoteService.php (no_superfluous_phpdoc_tags, phpdoc_trim)
-   8) src/Controller/NoteController.php (no_superfluous_phpdoc_tags, phpdoc_trim, blank_lines_before_namespace)
-   9) src/Controller/SecurityController.php (class_attributes_separation)
-  10) src/Controller/CategoryController.php (no_superfluous_phpdoc_tags, phpdoc_trim, blank_line_before_statement, blank_lines_before_namespace)
-  11) src/DataFixtures/AppFixtures.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-  12) src/DataFixtures/NoteFixtures.php (blank_line_after_opening_tag, blank_lines_before_namespace)
 
-Found 12 of 32 files that can be fixed in 1.599 seconds, 18.00 MB memory used
-   1) tests/Entity/NoteTest.php (blank_line_after_opening_tag, blank_lines_before_namespace)
-   2) tests/Entity/TaskTest.php (blank_line_after_opening_tag, blank_lines_before_namespace)
-   3) tests/Entity/UserTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
-   4) tests/Entity/CategoryTest.php (blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
-   5) tests/Service/TaskServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   6) tests/Service/NoteServiceTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace, no_whitespace_in_blank_line)
-   7) tests/Controller/TaskControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
-   8) tests/Controller/NoteControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
-   9) tests/Controller/CategoryControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_trim, blank_lines_before_namespace)
-  10) tests/Controller/SecurityControllerTest.php (no_superfluous_phpdoc_tags, blank_line_after_opening_tag, phpdoc_summary, phpdoc_trim, blank_lines_before_namespace)
+Fixed 0 of 32 files in 0.560 seconds, 16.00 MB memory used
 
-Found 10 of 12 files that can be fixed in 0.664 seconds, 16.00 MB memory used
+Fixed 0 of 12 files in 0.211 seconds, 16.00 MB memory used
+ ------- -------- ---- ---------------------- 
+  State   Domain   Id   Message Preview (en)  
+ ------- -------- ---- ---------------------- 
 
-FILE: /home/wwwroot/app/src/Service/CategoryService.php
-------------------------------------------------------------------------------------------------------------------------
-FOUND 5 ERRORS AFFECTING 3 LINES
-------------------------------------------------------------------------------------------------------------------------
- 116 | ERROR | [x] Empty lines are not allowed in multi-line function calls
- 116 | ERROR | [x] Empty lines are not allowed in multi-line function calls
- 117 | ERROR | [x] Empty lines are not allowed in multi-line function calls
- 117 | ERROR | [x] Empty lines are not allowed in multi-line function calls
- 121 | ERROR | [x] Function closing brace must go on the next line following the body; found 2 blank lines before brace
-------------------------------------------------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 5 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-------------------------------------------------------------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Controller/CategoryController.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 72 | ERROR | [x] Missing blank line before return statement
-----------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------
-
-Time: 2.38 secs; Memory: 10MB
-
-
-FILE: /home/wwwroot/app/tests/Service/NoteServiceTest.php
-----------------------------------------------------------------------
-FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
-----------------------------------------------------------------------
- 137 | WARNING | [x] Please trim any trailing whitespace
-----------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------
-
-Time: 1.05 secs; Memory: 8MB
-
- ----------- ---------- ------------------------- ------------------------- 
-  State       Domain     Id                        Message Preview (en)     
- ----------- ---------- ------------------------- ------------------------- 
-   missing    messages   action.change_password    action.change_password   
-   missing    messages   message.change_password   message.change_password  
-   missing    messages   label.tasks               label.tasks              
-   missing    messages   action.show               action.show              
- ----------- ---------- ------------------------- ------------------------- 
-
- ----------- ---------- ------------------------- ------------------------- ------------------------------- 
-  State       Domain     Id                        Message Preview (pl)      Fallback Message Preview (en)  
- ----------- ---------- ------------------------- ------------------------- ------------------------------- 
-   missing    messages   action.change_password    action.change_password    action.change_password         
-   missing    messages   message.change_password   message.change_password   message.change_password        
-   missing    messages   label.tasks               label.tasks               label.tasks                    
-   missing    messages   action.show               action.show               action.show                    
- ----------- ---------- ------------------------- ------------------------- ------------------------------- 
+ ------- -------- ---- ---------------------- ------------------------------- 
+  State   Domain   Id   Message Preview (pl)   Fallback Message Preview (en)  
+ ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20250626162417
-[notice] finished in 694.2ms, used 14M memory, 8 migrations executed, 23 sql queries
+[notice] finished in 870ms, used 14M memory, 8 migrations executed, 23 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20250626162417                                        
 

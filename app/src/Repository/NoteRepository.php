@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Repository;
 
 use App\Entity\Note;
@@ -18,7 +20,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class NoteRepository extends ServiceEntityRepository
 {
     /**
-     * Constructor
+     * Constructor.
      *
      * @param ManagerRegistry $registry registry
      */

@@ -5,6 +5,7 @@
  */
 
 // (c) 2025 zos
+
 namespace App\Controller;
 
 use App\Entity\Note;
@@ -28,7 +29,7 @@ class NoteController extends AbstractController
      * Constructor.
      *
      * @param NoteService         $noteService NoteService
-     * @param TranslatorInterface $translator TranslatorInterface
+     * @param TranslatorInterface $translator  TranslatorInterface
      */
     public function __construct(private readonly NoteService $noteService, private readonly TranslatorInterface $translator)
     {

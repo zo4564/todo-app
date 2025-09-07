@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Entity;
 
 use App\Repository\NoteRepository;
@@ -15,7 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Note
 {
     /**
-     * Id
+     * Id.
      *
      * @var int|null Id
      */
@@ -25,7 +27,7 @@ class Note
     private ?int $id = null;
 
     /**
-     * Created at
+     * Created at.
      *
      * @var \DateTimeImmutable|null Created at
      */
@@ -35,7 +37,7 @@ class Note
     private ?\DateTimeImmutable $createdAt = null;
 
     /**
-     * Updated at
+     * Updated at.
      *
      * @var \DateTimeImmutable|null Updated at
      */
@@ -45,7 +47,7 @@ class Note
     private ?\DateTimeImmutable $updatedAt = null;
 
     /**
-     * Slug
+     * Slug.
      *
      * @var string|null Slug
      */
@@ -55,7 +57,7 @@ class Note
     #[Gedmo\Slug(fields: ['title'])]
     private ?string $slug = null;
     /**
-     * Title
+     * Title.
      *
      * @var string|null Title
      */
@@ -65,7 +67,7 @@ class Note
     /**
      * Get id.
      *
-     * @return int|null Get id.
+     * @return int|null get id
      */
     public function getId(): ?int
     {
@@ -75,7 +77,7 @@ class Note
     /**
      * Get created at.
      *
-     * @return \DateTimeImmutable Get created at.
+     * @return \DateTimeImmutable get created at
      */
     public function getCreatedAt(): \DateTimeImmutable
     {
@@ -85,7 +87,7 @@ class Note
     /**
      * Set created at.
      *
-     * @param \DateTimeImmutable $createdAt Set created at.
+     * @param \DateTimeImmutable $createdAt set created at
      *
      * @return $this
      */
@@ -99,7 +101,7 @@ class Note
     /**
      * Get updated at.
      *
-     * @return \DateTimeImmutable Get updated at.
+     * @return \DateTimeImmutable get updated at
      */
     public function getUpdatedAt(): \DateTimeImmutable
     {
@@ -109,7 +111,7 @@ class Note
     /**
      * Set updated at.
      *
-     * @param \DateTimeImmutable $updatedAt Set updated at.
+     * @param \DateTimeImmutable $updatedAt set updated at
      *
      * @return $this
      */
@@ -123,7 +125,7 @@ class Note
     /**
      * Get slug.
      *
-     * @return string|null Get slug.
+     * @return string|null get slug
      */
     public function getSlug(): ?string
     {
@@ -133,7 +135,7 @@ class Note
     /**
      * Set slug.
      *
-     * @param string $slug Set slug.
+     * @param string $slug set slug
      *
      * @return $this
      */
@@ -147,7 +149,7 @@ class Note
     /**
      * Get title.
      *
-     * @return string|null Get title.
+     * @return string|null get title
      */
     public function getTitle(): ?string
     {
@@ -157,7 +159,7 @@ class Note
     /**
      * Set title.
      *
-     * @param string $title Set title.
+     * @param string $title set title
      *
      * @return $this
      */

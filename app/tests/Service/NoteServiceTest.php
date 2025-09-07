@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Service;
 
 use App\Entity\Note;
@@ -20,9 +22,7 @@ class NoteServiceTest extends KernelTestCase
     private ?NoteServiceInterface $noteService;
 
     /**
-     * Test save
-     *
-     * @return void
+     * Test save.
      */
     public function testSave(): void
     {
@@ -47,9 +47,7 @@ class NoteServiceTest extends KernelTestCase
     }
 
     /**
-     * Test delete
-     *
-     * @return void
+     * Test delete.
      */
     public function testDelete(): void
     {
@@ -77,9 +75,7 @@ class NoteServiceTest extends KernelTestCase
     }
 
     /**
-     * Test get paginated list
-     *
-     * @return void
+     * Test get paginated list.
      */
     public function testGetPaginatedList(): void
     {
@@ -103,8 +99,6 @@ class NoteServiceTest extends KernelTestCase
 
     /**
      * Test find one by title.
-     *
-     * @return void
      */
     public function testFindOneByTitle(): void
     {
@@ -124,8 +118,6 @@ class NoteServiceTest extends KernelTestCase
 
     /**
      * Set up.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -134,13 +126,11 @@ class NoteServiceTest extends KernelTestCase
         $this->entityManager = $container->get('doctrine.orm.entity_manager');
         $this->noteService = $container->get(NoteService::class);
     }
-    
+
     /**
-     * Test create task
+     * @param string $title title
      *
-     * @param string $title
-     *
-     * @return Task
+     * @return Task task
      */
     private function createTask(string $title = 'Related Task'): Task
     {

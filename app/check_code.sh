@@ -4,20 +4,21 @@ rm -f -- $RESULT_FILE
 touch $RESULT_FILE
 
 echo "Installing dependencies..."
-{
-  composer install --no-interaction
-  composer require --dev friendsofphp/php-cs-fixer  --no-interaction
-  composer require --dev squizlabs/php_codesniffer  --no-interaction
-  composer require --dev escapestudios/symfony2-coding-standard  --no-interaction
-  ./vendor/bin/phpcs --config-set installed_paths "$(realpath vendor/escapestudios/symfony2-coding-standard)"
-  ./vendor/bin/phpcs --config-set default_standard Symfony
-} > /dev/null 2>&1
+#{
+#  composer install --no-interaction
+#  composer require --dev friendsofphp/php-cs-fixer  --no-interaction
+#  composer require --dev squizlabs/php_codesniffer  --no-interaction
+#  composer require --dev escapestudios/symfony2-coding-standard  --no-interaction
+#  ./vendor/bin/phpcs --config-set default_standard Symfony
+#} > /dev/null 2>&1
+ ./vendor/bin/phpcs --config-set installed_paths "$(realpath vendor/escapestudios/symfony2-coding-standard)"
+
 rm -f -- .php-cs-fixer.dist.php
 rm -f -- .php-cs-fixer.cache
 
 echo "Running php-cs-fixer..."
-./vendor/bin/php-cs-fixer fix src/ --dry-run -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
-./vendor/bin/php-cs-fixer fix tests/ --dry-run -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
+./vendor/bin/php-cs-fixer fix src/ -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
+./vendor/bin/php-cs-fixer fix tests/ -vvv --rules=@Symfony,@PSR1,@PSR2,@PSR12 >> $RESULT_FILE
 rm -f -- .php-cs-fixer.dist.php
 rm -f -- .php-cs-fixer.cache
 
@@ -43,9 +44,9 @@ rm -f -- .phpunit.result.cache
 ./bin/phpunit --coverage-text
 rm -f -- .phpunit.result.cache
 
-echo "Tear down..."
-{
-  ./bin/console doctrine:schema:drop --no-interaction --full-database --force
-  rm -rf var
-  rm -rf vendor
-} > /dev/null 2>&1
+#echo "Tear down..."
+#{
+#  ./bin/console doctrine:schema:drop --no-interaction --full-database --force
+#  rm -rf var
+#  rm -rf vendor
+#} > /dev/null 2>&1

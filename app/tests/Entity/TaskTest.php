@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Entity;
 
 use App\Entity\Category;

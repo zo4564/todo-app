@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Service;
 
 use App\Entity\Task;
@@ -20,8 +22,6 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Test save.
-     *
-     * @return void
      */
     public function testSave(): void
     {
@@ -49,8 +49,6 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Test delete.
-     *
-     * @return void
      */
     public function testDelete(): void
     {
@@ -80,8 +78,6 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * Test get paginated list.
-     *
-     * @return void
      */
     public function testGetPaginatedList(): void
     {
@@ -107,8 +103,6 @@ class TaskServiceTest extends KernelTestCase
 
     /**
      * set up.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -119,11 +113,9 @@ class TaskServiceTest extends KernelTestCase
     }
 
     /**
-     * Test create category
+     * @param string $title title
      *
-     * @param string $title
-     *
-     * @return Category
+     * @return Category cat
      */
     private function createCategory(string $title = 'Test Category'): Category
     {

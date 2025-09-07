@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Controller;
 
 use App\Entity\Enum\UserRole;
@@ -14,7 +16,7 @@ use App\Entity\Category;
 class TaskControllerTest extends WebTestCase
 {
     /**
-     * Test create
+     * Test create.
      *
      * @return void
      */
@@ -49,8 +51,6 @@ class TaskControllerTest extends WebTestCase
 
     /**
      * Set up.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -61,11 +61,9 @@ class TaskControllerTest extends WebTestCase
     }
 
     /**
-     * Create user.
+     * @param array $roles roles
      *
-     * @param array $roles
-     *
-     * @return User
+     * @return User userzs
      */
     private function createUser(array $roles): User
     {

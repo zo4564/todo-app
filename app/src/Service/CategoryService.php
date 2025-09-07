@@ -34,8 +34,8 @@ class CategoryService implements CategoryServiceInterface
      * Constructor.
      *
      * @param CategoryRepository $categoryRepository category
-     * @param TaskRepository     $taskRepository task
-     * @param PaginatorInterface $paginator pagin
+     * @param TaskRepository     $taskRepository     task
+     * @param PaginatorInterface $paginator          pagin
      */
     public function __construct(private readonly CategoryRepository $categoryRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
     {
@@ -99,6 +99,7 @@ class CategoryService implements CategoryServiceInterface
             return false;
         }
     }
+
     /**
      * Get a paginated list of tasks for a category.
      *
@@ -113,10 +114,6 @@ class CategoryService implements CategoryServiceInterface
             $this->taskRepository->findBy(['category' => $category]),
             $page,
             self::PAGINATOR_ITEMS_PER_PAGE
-
-
         );
-
-
     }
 }

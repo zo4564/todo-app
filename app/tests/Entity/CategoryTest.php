@@ -1,12 +1,14 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Entity;
 
 use App\Entity\Category;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Category test class
+ * Category test class.
  */
 class CategoryTest extends TestCase
 {

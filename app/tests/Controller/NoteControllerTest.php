@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Controller;
 
 use App\Entity\Enum\UserRole;
@@ -17,8 +19,6 @@ class NoteControllerTest extends WebTestCase
 
     /**
      * Test index page.
-     *
-     * @return void
      */
     public function testIndexPage(): void
     {
@@ -33,8 +33,6 @@ class NoteControllerTest extends WebTestCase
 
     /**
      * Test create page get.
-     *
-     * @return void
      */
     public function testCreatePageGet(): void
     {
@@ -48,8 +46,6 @@ class NoteControllerTest extends WebTestCase
 
     /**
      * Test create note.
-     *
-     * @return void
      */
     public function testCreateNote(): void
     {
@@ -70,8 +66,6 @@ class NoteControllerTest extends WebTestCase
 
     /**
      * Set up.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -82,11 +76,9 @@ class NoteControllerTest extends WebTestCase
     }
 
     /**
-     * Create user.
+     * @param array $roles roles
      *
-     * @param array $roles
-     *
-     * @return User
+     * @return User users
      */
     private function createUser(array $roles): User
     {

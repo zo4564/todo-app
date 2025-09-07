@@ -4,8 +4,6 @@
  * Category controller.
  */
 
-
-
 namespace App\Controller;
 
 use App\Entity\Category;
@@ -29,7 +27,7 @@ class CategoryController extends AbstractController
      * Constructor.
      *
      * @param CategoryServiceInterface $categoryService CategoryServiceInterface
-     * @param TranslatorInterface      $translator TranslatorInterface
+     * @param TranslatorInterface      $translator      TranslatorInterface
      */
     public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly TranslatorInterface $translator)
     {
@@ -69,6 +67,7 @@ class CategoryController extends AbstractController
     public function view(Category $category): Response
     {
         $tasks = $this->categoryService->getTasksByCategory($category);
+
         return $this->render(
             'category/view.html.twig',
             ['category' => $category, 'tasks' => $tasks]

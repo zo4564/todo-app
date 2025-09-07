@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -12,11 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 class AppFixtures extends Fixture
 {
     /**
-     * Load
-     *
-     * @param ObjectManager $manager
-     *
-     * @return void
+     * @param ObjectManager $manager mgr
      */
     public function load(ObjectManager $manager): void
     {

@@ -1,5 +1,7 @@
 <?php
+
 // (c) 2025 zos
+
 namespace App\Tests\Entity;
 
 use App\Entity\User;
@@ -13,8 +15,6 @@ class UserTest extends TestCase
 {
     /**
      * Test default values.
-     *
-     * @return void
      */
     public function testDefaultValues(): void
     {
@@ -29,8 +29,6 @@ class UserTest extends TestCase
 
     /**
      * Test email.
-     *
-     * @return void
      */
     public function testEmail(): void
     {
@@ -44,8 +42,6 @@ class UserTest extends TestCase
 
     /**
      * Test password.
-     *
-     * @return void
      */
     public function testPassword(): void
     {
@@ -58,8 +54,6 @@ class UserTest extends TestCase
 
     /**
      * Test roles.
-     *
-     * @return void
      */
     public function testRoles(): void
     {
@@ -76,8 +70,6 @@ class UserTest extends TestCase
 
     /**
      * Test erase credentials.
-     *
-     * @return void
      */
     public function testEraseCredentialsDoesNothing(): void
     {
