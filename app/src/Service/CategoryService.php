@@ -33,9 +33,9 @@ class CategoryService implements CategoryServiceInterface
     /**
      * Constructor.
      *
-     * @param CategoryRepository $categoryRepository
-     * @param TaskRepository     $taskRepository
-     * @param PaginatorInterface $paginator
+     * @param CategoryRepository $categoryRepository category
+     * @param TaskRepository     $taskRepository task
+     * @param PaginatorInterface $paginator pagin
      */
     public function __construct(private readonly CategoryRepository $categoryRepository, private readonly TaskRepository $taskRepository, private readonly PaginatorInterface $paginator)
     {

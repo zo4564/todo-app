@@ -40,7 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * Roles.
      *
-     * @var list<int, string>
+     * @var list<int, string> roles
      */
     #[ORM\Column(type: 'json')]
     private array $roles = [];
@@ -85,7 +85,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * A visual identifier that represents this user.
      *
-     * @see UserInterface
+     * @see UserInterface see
      *
      * @return string User identifier
      */
@@ -97,7 +97,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * Getter for roles.
      *
-     * @see UserInterface
+     * @see UserInterface see
      *
      * @return list<string>
      */
@@ -145,7 +145,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * Removes sensitive information from the token.
      *
-     * @see UserInterface
+     * @see UserInterface see
      */
     public function eraseCredentials(): void
     {

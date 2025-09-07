@@ -17,7 +17,7 @@ class Note
     /**
      * Id
      *
-     * @var int|null
+     * @var int|null Id
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -27,7 +27,7 @@ class Note
     /**
      * Created at
      *
-     * @var \DateTimeImmutable|null
+     * @var \DateTimeImmutable|null Created at
      */
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     #[Assert\Type(\DateTimeImmutable::class)]
@@ -37,7 +37,7 @@ class Note
     /**
      * Updated at
      *
-     * @var \DateTimeImmutable|null
+     * @var \DateTimeImmutable|null Updated at
      */
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     #[Assert\Type(\DateTimeImmutable::class)]
@@ -47,7 +47,7 @@ class Note
     /**
      * Slug
      *
-     * @var string|null
+     * @var string|null Slug
      */
     #[ORM\Column(length: 64, nullable: true)]
     #[Assert\Type('string')]
@@ -57,7 +57,7 @@ class Note
     /**
      * Title
      *
-     * @var string|null
+     * @var string|null Title
      */
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -65,7 +65,7 @@ class Note
     /**
      * Get id.
      *
-     * @return int|null
+     * @return int|null Get id.
      */
     public function getId(): ?int
     {
@@ -75,7 +75,7 @@ class Note
     /**
      * Get created at.
      *
-     * @return \DateTimeImmutable
+     * @return \DateTimeImmutable Get created at.
      */
     public function getCreatedAt(): \DateTimeImmutable
     {
@@ -85,7 +85,7 @@ class Note
     /**
      * Set created at.
      *
-     * @param \DateTimeImmutable $createdAt
+     * @param \DateTimeImmutable $createdAt Set created at.
      *
      * @return $this
      */
@@ -99,7 +99,7 @@ class Note
     /**
      * Get updated at.
      *
-     * @return \DateTimeImmutable
+     * @return \DateTimeImmutable Get updated at.
      */
     public function getUpdatedAt(): \DateTimeImmutable
     {
@@ -109,7 +109,7 @@ class Note
     /**
      * Set updated at.
      *
-     * @param \DateTimeImmutable $updatedAt
+     * @param \DateTimeImmutable $updatedAt Set updated at.
      *
      * @return $this
      */
@@ -123,7 +123,7 @@ class Note
     /**
      * Get slug.
      *
-     * @return string|null
+     * @return string|null Get slug.
      */
     public function getSlug(): ?string
     {
@@ -133,7 +133,7 @@ class Note
     /**
      * Set slug.
      *
-     * @param string $slug
+     * @param string $slug Set slug.
      *
      * @return $this
      */
@@ -147,7 +147,7 @@ class Note
     /**
      * Get title.
      *
-     * @return string|null
+     * @return string|null Get title.
      */
     public function getTitle(): ?string
     {
@@ -157,7 +157,7 @@ class Note
     /**
      * Set title.
      *
-     * @param string $title
+     * @param string $title Set title.
      *
      * @return $this
      */

@@ -18,7 +18,7 @@ class Category
     /**
      * Id
      *
-     * @var int|null
+     * @var int|null Id
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -27,7 +27,7 @@ class Category
 
     /**Title
      *
-     * @var string|null
+     * @var string|null Title
      */
     #[ORM\Column(length: 64)]
     #[Assert\Length(min: 3, max: 64)]
@@ -38,7 +38,7 @@ class Category
     /**
      *Created at.
      *
-     * @var \DateTimeImmutable|null
+     * @var \DateTimeImmutable|null Created at.
      */
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     #[Gedmo\Timestampable(on: 'create')]
@@ -48,7 +48,7 @@ class Category
     /**
      * Updated at.
      *
-     * @var \DateTimeImmutable|null
+     * @var \DateTimeImmutable|null Updated at.
      */
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     #[Gedmo\Timestampable(on: 'update')]
@@ -58,7 +58,7 @@ class Category
     /**
      * Title
      *
-     * @var string|null
+     * @var string|null Title
      */
     #[ORM\Column(length: 64, nullable: true)]
     #[Assert\Type('string')]
@@ -69,7 +69,7 @@ class Category
     /**
      * Get id.
      *
-     * @return int|null
+     * @return int|null Get id.
      */
     public function getId(): ?int
     {
@@ -79,7 +79,7 @@ class Category
     /**
      * Get title.
      *
-     * @return string|null
+     * @return string|null Get title.
      */
     public function getTitle(): ?string
     {
@@ -89,7 +89,7 @@ class Category
     /**
      * Set title.
      *
-     * @param string $title
+     * @param string $title Set title.
      *
      * @return $this
      */
@@ -103,7 +103,7 @@ class Category
     /**
      * Get created at.
      *
-     * @return \DateTimeImmutable|null
+     * @return \DateTimeImmutable|null Get created at.
      */
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -113,7 +113,7 @@ class Category
     /**
      * Set created at.
      *
-     * @param \DateTimeImmutable $createdAt
+     * @param \DateTimeImmutable $createdAt Set created at.
      *
      * @return $this
      */
@@ -127,7 +127,7 @@ class Category
     /**
      * Get updates at.
      *
-     * @return \DateTimeImmutable|null
+     * @return \DateTimeImmutable|null Get updates at.
      */
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
@@ -137,7 +137,7 @@ class Category
     /**
      * Set updated at.
      *
-     * @param \DateTimeImmutable $updatedAt
+     * @param \DateTimeImmutable $updatedAt Set updated at.
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Category
     /**
      * Get slug.
      *
-     * @return string|null
+     * @return string|null Get slug.
      */
     public function getSlug(): ?string
     {
@@ -161,8 +161,7 @@ class Category
     /**
      * Set slug.
      *
-     * @param string|null $slug
-     *
+     * @param string|null $slug Set slug.
      * @return $this
      */
     public function setSlug(?string $slug): static

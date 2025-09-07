@@ -20,7 +20,7 @@ class NoteRepository extends ServiceEntityRepository
     /**
      * Constructor
      *
-     * @param ManagerRegistry $registry
+     * @param ManagerRegistry $registry registry
      */
     public function __construct(ManagerRegistry $registry)
     {

@@ -74,7 +74,7 @@ class Task
     /**
      * Notes.
      *
-     * @var Collection<int, Note>
+     * @var Collection<int, Note>  Notes
      */
     #[ORM\ManyToMany(targetEntity: Note::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
     #[ORM\JoinTable(name: 'tasks_notes')]
